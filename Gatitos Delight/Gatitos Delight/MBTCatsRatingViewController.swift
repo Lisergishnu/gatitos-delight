@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  MBTCatsRatingViewController.swift
 //  Gatitos Delight
 //
 //  Created by Marco Benzi Tobar on 4/6/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class MBTCatsRatingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

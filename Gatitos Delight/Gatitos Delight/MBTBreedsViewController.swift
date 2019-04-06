@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  MBTBreedsViewController.swift
 //  Gatitos Delight
 //
 //  Created by Marco Benzi Tobar on 4/6/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class MBTBreedsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
