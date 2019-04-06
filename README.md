@@ -30,3 +30,7 @@ At this point I explored the API with a REST client, and noticed that sometimes 
 
 The overall architecture will be MVC, using delegates to avoid coupling between View Controllers.
 
+For package management I will use CocoaPods. For JSON support I will use SwiftlyJSON.
+
+Once I had the basic application set, I set up a [Git Flow](https://danielkummer.github.io/git-flow-cheatsheet/) environment for development. This will allow me to separate development into features, so I can keep everything tidy.
+
