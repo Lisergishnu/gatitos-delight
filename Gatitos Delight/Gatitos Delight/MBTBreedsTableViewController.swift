@@ -1,5 +1,5 @@
 //
-//  MBTBreedsViewController.swift
+//  MBTBreedsTableViewController.swift
 //  Gatitos Delight
 //
 //  Created by Marco Benzi Tobar on 4/6/19.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-class MBTBreedsViewController: UIViewController {
+class MBTBreedsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    
 
 }
 
