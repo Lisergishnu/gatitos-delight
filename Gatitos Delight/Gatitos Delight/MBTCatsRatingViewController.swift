@@ -21,31 +21,89 @@ class MBTCatsRatingViewController: UIViewController {
     @IBOutlet weak var downvoteButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // This variable is set everytime fillUI is called
+    var currentCatID: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        getRandomCat()
+        showLoadingUI()
+        getRandomCat() {
+            self.hideLoadingUI()
+        }
     }
     
-    // MARK: - Cat functionality
-    func getRandomCat() {
-        showLoadingUI()
+    // MARK: - Cat API functionality
+    func getRandomCat(completion: (()->())? = nil) {
         Alamofire.request("https://api.thecatapi.com/v1/images/search", headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
             guard let responseValue = response.result.value?[0] else {
                 debugPrint("Couldn't get a proper API response.")
                 return
             }
-            self.fillUI(catInfoResponse: JSON(responseValue))
+            self.fillUI(catInfoResponse: JSON(responseValue)) {
+                completion?()
+            }
+        }
+    }
+    
+    func emitVote(with id:String, value:Int, completion: (()->())? = nil) {
+        let voteBody : Parameters = [
+            "image_id" : id,
+            "value": value
+        ]
+        debugPrint(voteBody)
+        Alamofire.request("https://api.thecatapi.com/v1/votes",
+                          method: .post,
+                          parameters: voteBody,
+                          encoding: JSONEncoding.default,
+                          headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
+            switch response.result {
+            case .success:
+                debugPrint(response)
+                completion?()
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
+    }
+    
+    // MARK: - Voting handlers
+    @IBAction func upvoteCurrentCat(_ sender: Any) {
+        guard let id = currentCatID else {
+            return
+        }
+        showLoadingUI()
+        emitVote(with: id, value: 1) {
+            self.getRandomCat() {
+                self.hideLoadingUI()
+            }
+        }
+    }
+    
+    @IBAction func downvoteCurrentCat(_ sender: Any) {
+        guard let id = currentCatID else {
+            return
+        }
+        
+        showLoadingUI()
+        emitVote(with: id, value: 0) {
+            self.getRandomCat() {
+                self.hideLoadingUI()
+            }
         }
     }
     
     // MARK: - UI Helper functions
-    func fillUI(catInfoResponse: JSON) {
+    func fillUI(catInfoResponse: JSON, completion: (()->())? = nil) {
         debugPrint(catInfoResponse)
         if let breedName = catInfoResponse["breeds"]["name"].string  {
             breedButton.setTitle(breedName, for: UIControl.State.normal)
         } else {
             breedButton.setTitle("", for: UIControl.State.normal)
+        }
+        
+        if let catID = catInfoResponse["id"].string {
+            currentCatID = catID
         }
         
         if let imageURL = catInfoResponse["url"].string {
@@ -54,7 +112,7 @@ class MBTCatsRatingViewController: UIViewController {
                 switch result {
                 case .success(let value):
                     debugPrint(value.image)
-                    self.hideLoadingUI()
+                    completion?()
                 case .failure(let error):
                     print(error)
                 }
