@@ -14,7 +14,7 @@ import Kingfisher
 
 class MBTCatsRatingViewController: UIViewController {
     
-    
+    @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var catImageView: UIImageView!
     @IBOutlet weak var breedButton: UIButton!
     @IBOutlet weak var upvoteButton: UIButton!
@@ -78,6 +78,7 @@ class MBTCatsRatingViewController: UIViewController {
                 self.hideLoadingUI()
             }
         }
+        self.startBannerAnimation(with: UIImage(named: "YayBanner")!)
     }
     
     @IBAction func downvoteCurrentCat(_ sender: Any) {
@@ -91,6 +92,7 @@ class MBTCatsRatingViewController: UIViewController {
                 self.hideLoadingUI()
             }
         }
+        self.startBannerAnimation(with: UIImage(named: "NayBanner")!)
     }
     
     // MARK: - UI Helper functions
@@ -120,6 +122,20 @@ class MBTCatsRatingViewController: UIViewController {
         } else {
             debugPrint("Cat image couldn't be loaded.")
         }
+    }
+    
+    func startBannerAnimation(with image:UIImage) {
+        self.bannerImageView.alpha = 0
+        bannerImageView.image = image
+        UIView.animate(withDuration: 0.75,
+                       delay: 0,
+                       options:[.autoreverse,.curveEaseOut],
+                       animations: {
+                        self.bannerImageView.alpha = 1
+                        },
+                       completion: { finished in
+                        self.bannerImageView.alpha = 0
+                })
     }
     
     func showLoadingUI() {
