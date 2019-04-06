@@ -47,11 +47,16 @@ class MBTCatsRatingViewController: UIViewController {
     }
     
     func emitVote(with id:String, value:Int, completion: (()->())? = nil) {
-        let parameters : Parameters = [
+        let voteBody : Parameters = [
             "image_id" : id,
             "value": value
         ]
-        Alamofire.request("https://api.thecatapi.com/v1/votes", method: HTTPMethod.post, parameters: parameters, headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
+        debugPrint(voteBody)
+        Alamofire.request("https://api.thecatapi.com/v1/votes",
+                          method: .post,
+                          parameters: voteBody,
+                          encoding: JSONEncoding.default,
+                          headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
             switch response.result {
             case .success:
                 debugPrint(response)
