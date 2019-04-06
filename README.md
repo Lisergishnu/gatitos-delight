@@ -26,8 +26,7 @@ When browsing the breeds, they will be alphabetically sorted with a mention of t
 
 ## 🛠 App. architecture
 
-At this point I explored the API with a REST client, and noticed that sometimes the API doesn't return the breed type. The app needs to account for that.
+At this point I explored the API with a REST client, and noticed that sometimes the API doesn't return the breed type. The app needs to account for that. The Cat API gives you photos of cats, and also lets you see information of these breeds. Each has to be done separately.
 
-The Cat API gives you photos of cats, and also lets you see information of these breeds. Each has to be done separately.
-
+The overall architecture will be MVC, using delegates to avoid coupling between View Controllers.
 
