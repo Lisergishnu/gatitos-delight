@@ -16,6 +16,8 @@ Before starting coding, I needed to have some overall idea of how I wanted the a
 
 So with this in mind, I go to [Sketch](https://www.sketch.com) and starting making a mockup of the application. I want it to be easy to use, so I want to use a visual language that is more or less ubiquitous. Since the website has a very simple yes/no interface, it makes sense to use a Tinder-like UX. Also it is a good time to define a basic logo. 
 
-For the logo I used the iOS icon template of Sketch, to which I overimposed a kitty icon I found on Iconfinder.
+For the logo I used the iOS icon template of Sketch, to which I overimposed a kitty icon I found on Iconfinder. You can see the result at the begining of the document.
 
+For the captions in the app I used the [Tiresias Infofont](https://www.fontsquirrel.com/fonts/tiresias-infofont) because is designed for visually impaired people - and I also think it looks nice 😄. With a pallete generator I picked some colors and made an splash screen.
 
+The design I came up with is a very simple navigation bar with three tabs: Cats, where you will rate cats, breeds, where you can choose a breed and sample cats; and an about screen.
