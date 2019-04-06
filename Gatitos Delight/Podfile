@@ -9,4 +9,5 @@ target 'Gatitos Delight' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Alamofire', '~> 4.5'
   pod 'Alamofire-SwiftyJSON', '~> 3.0'
+  pod 'Kingfisher', '= 5.2'
 end

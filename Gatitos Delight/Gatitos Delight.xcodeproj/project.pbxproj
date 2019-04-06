@@ -15,6 +15,7 @@
 		FF5839532258E081008A1911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5839522258E081008A1911 /* Assets.xcassets */; };
 		FF5839562258E081008A1911 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5839542258E081008A1911 /* LaunchScreen.storyboard */; };
 		FF58395E2258E9AD008A1911 /* MBTAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58395D2258E9AD008A1911 /* MBTAboutViewController.swift */; };
+		FF5839612258EDBE008A1911 /* MBTCatAPIHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5839602258EDBE008A1911 /* MBTCatAPIHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FF5839552258E081008A1911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF5839572258E081008A1911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF58395D2258E9AD008A1911 /* MBTAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAboutViewController.swift; sourceTree = "<group>"; };
+		FF5839602258EDBE008A1911 /* MBTCatAPIHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTCatAPIHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		FF5839482258E07F008A1911 /* Gatitos Delight */ = {
 			isa = PBXGroup;
 			children = (
+				FF58395F2258ED8D008A1911 /* Cat API */,
 				FF5839492258E07F008A1911 /* AppDelegate.swift */,
 				FF58394B2258E07F008A1911 /* MBTCatsRatingViewController.swift */,
 				FF58394D2258E07F008A1911 /* MBTBreedsViewController.swift */,
@@ -92,6 +95,14 @@
 				FF5839572258E081008A1911 /* Info.plist */,
 			);
 			path = "Gatitos Delight";
+			sourceTree = "<group>";
+		};
+		FF58395F2258ED8D008A1911 /* Cat API */ = {
+			isa = PBXGroup;
+			children = (
+				FF5839602258EDBE008A1911 /* MBTCatAPIHeader.swift */,
+			);
+			path = "Cat API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +222,7 @@
 			files = (
 				FF58395E2258E9AD008A1911 /* MBTAboutViewController.swift in Sources */,
 				FF58394E2258E07F008A1911 /* MBTBreedsViewController.swift in Sources */,
+				FF5839612258EDBE008A1911 /* MBTCatAPIHeader.swift in Sources */,
 				FF58394A2258E07F008A1911 /* AppDelegate.swift in Sources */,
 				FF58394C2258E07F008A1911 /* MBTCatsRatingViewController.swift in Sources */,
 			);
