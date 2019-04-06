@@ -20,4 +20,5 @@ For the logo I used the iOS icon template of Sketch, to which I overimposed a ki
 
 For the captions in the app I used the [Tiresias Infofont](https://www.fontsquirrel.com/fonts/tiresias-infofont) because is designed for visually impaired people - and I also think it looks nice 😄. With a pallete generator I picked some colors and made an splash screen.
 
-The design I came up with is a very simple navigation bar with three tabs: Cats, where you will rate cats, breeds, where you can choose a breed and sample cats; and an about screen.
+The design I came up with is a very simple navigation bar with three tabs: Cats, where you will rate cats, breeds, where you can choose a breed and sample cats; and an about screen. I laydown in Sketch also hotspots so I can test the flow of the app as I design it. I find that that saves time in the long run.
+
