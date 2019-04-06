@@ -10,7 +10,7 @@
 		80CE01BE1FAEFE840AE1C9F9 /* Pods_Gatitos_Delight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6478FDA6277DFE24F89E0568 /* Pods_Gatitos_Delight.framework */; };
 		FF58394A2258E07F008A1911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5839492258E07F008A1911 /* AppDelegate.swift */; };
 		FF58394C2258E07F008A1911 /* MBTCatsRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58394B2258E07F008A1911 /* MBTCatsRatingViewController.swift */; };
-		FF58394E2258E07F008A1911 /* MBTBreedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58394D2258E07F008A1911 /* MBTBreedsViewController.swift */; };
+		FF58394E2258E07F008A1911 /* MBTBreedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58394D2258E07F008A1911 /* MBTBreedsTableViewController.swift */; };
 		FF5839512258E07F008A1911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58394F2258E07F008A1911 /* Main.storyboard */; };
 		FF5839532258E081008A1911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5839522258E081008A1911 /* Assets.xcassets */; };
 		FF5839562258E081008A1911 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5839542258E081008A1911 /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		FF5839462258E07F008A1911 /* Gatitos Delight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gatitos Delight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5839492258E07F008A1911 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF58394B2258E07F008A1911 /* MBTCatsRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTCatsRatingViewController.swift; sourceTree = "<group>"; };
-		FF58394D2258E07F008A1911 /* MBTBreedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedsViewController.swift; sourceTree = "<group>"; };
+		FF58394D2258E07F008A1911 /* MBTBreedsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedsTableViewController.swift; sourceTree = "<group>"; };
 		FF5839502258E07F008A1911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF5839522258E081008A1911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF5839552258E081008A1911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				FF58395F2258ED8D008A1911 /* Cat API */,
 				FF5839492258E07F008A1911 /* AppDelegate.swift */,
 				FF58394B2258E07F008A1911 /* MBTCatsRatingViewController.swift */,
-				FF58394D2258E07F008A1911 /* MBTBreedsViewController.swift */,
+				FF58394D2258E07F008A1911 /* MBTBreedsTableViewController.swift */,
 				FF58395D2258E9AD008A1911 /* MBTAboutViewController.swift */,
 				FF58394F2258E07F008A1911 /* Main.storyboard */,
 				FF5839522258E081008A1911 /* Assets.xcassets */,
@@ -221,7 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF58395E2258E9AD008A1911 /* MBTAboutViewController.swift in Sources */,
-				FF58394E2258E07F008A1911 /* MBTBreedsViewController.swift in Sources */,
+				FF58394E2258E07F008A1911 /* MBTBreedsTableViewController.swift in Sources */,
 				FF5839612258EDBE008A1911 /* MBTCatAPIHeader.swift in Sources */,
 				FF58394A2258E07F008A1911 /* AppDelegate.swift in Sources */,
 				FF58394C2258E07F008A1911 /* MBTCatsRatingViewController.swift in Sources */,
