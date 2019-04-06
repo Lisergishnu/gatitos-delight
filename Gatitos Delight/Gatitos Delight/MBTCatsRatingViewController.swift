@@ -31,7 +31,11 @@ class MBTCatsRatingViewController: UIViewController {
     func getRandomCat() {
         showLoadingUI()
         Alamofire.request("https://api.thecatapi.com/v1/images/search", headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
-            self.fillUI(catInfoResponse: JSON(response.result.value?[0]))
+            guard let responseValue = response.result.value?[0] else {
+                debugPrint("Couldn't get a proper API response.")
+                return
+            }
+            self.fillUI(catInfoResponse: JSON(responseValue))
         }
     }
     
