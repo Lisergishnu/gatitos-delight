@@ -169,6 +169,17 @@
                         <viewLayoutGuide key="safeArea" id="rVa-iT-xpM"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tuw-ch-Y65"/>
+                    <connections>
+                        <outlet property="catThumbnail1ImageView" destination="VUz-C5-W2a" id="2tJ-sX-Mqp"/>
+                        <outlet property="catThumbnail2ImageView" destination="oUi-8z-nwu" id="6vc-ba-Tjw"/>
+                        <outlet property="catThumbnail3ImageView" destination="GXP-v5-eHY" id="l2n-aW-xnN"/>
+                        <outlet property="catThumbnail4ImageView" destination="KTk-jN-aRR" id="nzf-h3-WPO"/>
+                        <outlet property="catThumbnail5ImageView" destination="k6j-9o-qGs" id="teG-XP-lS8"/>
+                        <outlet property="catThumbnail6ImageView" destination="ZKw-Pw-Oop" id="qjN-HZ-1WS"/>
+                        <outlet property="catThumbnail7ImageView" destination="6IO-F5-Tqi" id="jXk-TV-coh"/>
+                        <outlet property="catThumbnail8ImageView" destination="BVc-3p-QH9" id="69d-fV-Tmt"/>
+                        <outlet property="catThumbnail9ImageView" destination="XtD-du-bwa" id="ftZ-YD-WSu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvy-Tk-GIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
