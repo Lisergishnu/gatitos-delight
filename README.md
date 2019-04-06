@@ -22,6 +22,8 @@ For the captions in the app I used the [Tiresias Infofont](https://www.fontsquir
 
 The design I came up with is a very simple navigation bar with three tabs: Cats, where you will rate cats, breeds, where you can choose a breed and sample cats; and an about screen. Also I lay down in Sketch hotspots so I can test the flow of the app as I design it. I find that that saves time in the long run.
 
+When browsing the breeds, they will be alphabetically sorted with a mention of the country the breed comes from.
+
 ## 🛠 App. architecture
 
 At this point I explored the API with a REST client, and noticed that sometimes the API doesn't return the breed type. The app needs to account for that.
