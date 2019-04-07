@@ -256,7 +256,7 @@
         <scene sceneID="OQp-l5-pwl">
             <objects>
                 <navigationController id="3rH-Pz-x3x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Breeds" id="IVb-uy-sTc"/>
+                    <tabBarItem key="tabBarItem" title="Breeds" image="BreedsTabIcon" id="IVb-uy-sTc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HOc-37-FmD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -434,6 +434,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BreedsTabIcon" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

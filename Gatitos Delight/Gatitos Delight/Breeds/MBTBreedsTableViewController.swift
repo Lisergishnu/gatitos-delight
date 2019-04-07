@@ -11,19 +11,9 @@ import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
-struct MBTBreedCellModel {
-    var id: String
-    var name: String
-    var country: String
-    var lifeSpan: String
-    var temperament: String
-    var description: String
-    var weight: String
-}
-
 class MBTBreedsTableViewController: UITableViewController {
 
-    var breedCells: [MBTBreedCellModel] = []
+    var breedCells: [MBTBreedModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +40,7 @@ class MBTBreedsTableViewController: UITableViewController {
                     let weight = breed["weight"]["metric"].string else {
                         continue
                 }
-                let b = MBTBreedCellModel(id: id,
+                let b = MBTBreedModel(id: id,
                                           name: name,
                                           country: country,
                                           lifeSpan: lifeSpan,

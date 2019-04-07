@@ -29,7 +29,7 @@ class MBTBreedDetailViewController: UIViewController {
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    var representedBreed : MBTBreedCellModel? {
+    var representedBreed : MBTBreedModel? {
         didSet{
             populateUI()
         }

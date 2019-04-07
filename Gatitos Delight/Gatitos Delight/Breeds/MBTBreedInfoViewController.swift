@@ -17,7 +17,7 @@ class MBTBreedInfoViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var lifeSpanLabel: UILabel!
     
-    var representedBreed : MBTBreedCellModel? {
+    var representedBreed : MBTBreedModel? {
         didSet {
             populateUI()
         }
