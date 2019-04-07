@@ -24,8 +24,12 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pyH-0F-BJT">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
                                 <rect key="frame" x="16" y="89" width="343" height="400"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="lNZ-t4-GGs" appends="YES" id="Hvf-Aq-uxa"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RateThisCatBanner" translatesAutoresizingMaskIntoConstraints="NO" id="Ggx-YZ-BRY" userLabel="ActionBanner">
                                 <rect key="frame" x="90" y="40" width="195" height="29"/>
@@ -125,11 +129,90 @@
                         <outlet property="loadingBackgroundImageView" destination="1eu-t2-6Mp" id="hwk-VA-We5"/>
                         <outlet property="upvoteButton" destination="svG-aD-0kZ" id="gK6-gD-SiJ"/>
                         <outlet property="upvoteImageView" destination="rPf-NC-tNv" id="dsb-Eo-KOQ"/>
+                        <segue destination="Fxn-i2-8is" kind="show" identifier="zoom" id="NlE-g9-Ayj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lNZ-t4-GGs">
+                    <connections>
+                        <action selector="openDetail:" destination="9pv-A4-QxB" id="Ubf-8F-7MW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--Cat Photo Detail View Controller-->
+        <scene sceneID="7Bo-NE-kne">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Fxn-i2-8is" customClass="MBTCatPhotoDetailViewController" customModule="Gatitos_Delight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mac-H7-uxz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar userInteractionEnabled="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="AEW-1m-ke3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Back" id="w35-3C-zhV"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNp-eG-jeq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <connections>
+                                    <segue destination="yF4-Wp-son" kind="unwind" unwindAction="unwindDetailViewWithSegue:" id="exv-7g-6a3"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18Z-sD-ldx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X2c-ot-5fO">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="556"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="556" id="mEK-h2-jVT"/>
+                                            <constraint firstAttribute="width" constant="319" id="xDk-kz-yuN"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="X2c-ot-5fO" firstAttribute="top" secondItem="18Z-sD-ldx" secondAttribute="top" id="6kM-mB-DkN"/>
+                                    <constraint firstAttribute="bottom" secondItem="X2c-ot-5fO" secondAttribute="bottom" id="Nd0-V0-Pwe"/>
+                                    <constraint firstItem="X2c-ot-5fO" firstAttribute="leading" secondItem="18Z-sD-ldx" secondAttribute="leading" id="SCI-qL-6eR"/>
+                                    <constraint firstAttribute="trailing" secondItem="X2c-ot-5fO" secondAttribute="trailing" id="g1w-5f-9WP"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Fxn-i2-8is" id="XlC-16-J2S"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AEW-1m-ke3" firstAttribute="leading" secondItem="EKg-kN-INP" secondAttribute="leading" id="0CS-n4-jUX"/>
+                            <constraint firstItem="EKg-kN-INP" firstAttribute="trailing" secondItem="bNp-eG-jeq" secondAttribute="trailing" id="8WE-53-1kT"/>
+                            <constraint firstItem="bNp-eG-jeq" firstAttribute="leading" secondItem="EKg-kN-INP" secondAttribute="leading" id="Elg-Vx-Z0R"/>
+                            <constraint firstItem="18Z-sD-ldx" firstAttribute="leading" secondItem="EKg-kN-INP" secondAttribute="leading" id="TcJ-eA-thz"/>
+                            <constraint firstItem="18Z-sD-ldx" firstAttribute="top" secondItem="AEW-1m-ke3" secondAttribute="bottom" id="bcc-gZ-GBK"/>
+                            <constraint firstItem="bNp-eG-jeq" firstAttribute="top" secondItem="EKg-kN-INP" secondAttribute="top" id="gh3-ZW-jL5"/>
+                            <constraint firstItem="EKg-kN-INP" firstAttribute="trailing" secondItem="18Z-sD-ldx" secondAttribute="trailing" id="hJs-wM-NXc"/>
+                            <constraint firstItem="AEW-1m-ke3" firstAttribute="bottom" secondItem="bNp-eG-jeq" secondAttribute="bottom" id="nT0-nu-CKJ"/>
+                            <constraint firstItem="AEW-1m-ke3" firstAttribute="trailing" secondItem="EKg-kN-INP" secondAttribute="trailing" id="rsH-nZ-Miy"/>
+                            <constraint firstItem="EKg-kN-INP" firstAttribute="bottom" secondItem="18Z-sD-ldx" secondAttribute="bottom" id="sGc-xZ-SEh"/>
+                            <constraint firstItem="AEW-1m-ke3" firstAttribute="top" secondItem="EKg-kN-INP" secondAttribute="top" id="wGl-oF-asW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EKg-kN-INP"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="photoDetailHeightConstraint" destination="mEK-h2-jVT" id="u29-hp-CmJ"/>
+                        <outlet property="photoDetailImageView" destination="X2c-ot-5fO" id="9pe-GF-UKQ"/>
+                        <outlet property="photoDetailScrollView" destination="18Z-sD-ldx" id="nQW-eF-QMc"/>
+                        <outlet property="photoDetailWidthConstraint" destination="xDk-kz-yuN" id="ddi-3V-doc"/>
+                        <segue destination="yF4-Wp-son" kind="unwind" identifier="unwindDetail" unwindAction="unwindDetailViewWithSegue:" id="VYB-Tq-l3F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UOT-gd-FGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yF4-Wp-son" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1544.8" y="-321.58920539730138"/>
         </scene>
         <!--Cat Breeds-->
         <scene sceneID="eCh-qN-Pr4">
