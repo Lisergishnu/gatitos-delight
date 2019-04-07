@@ -190,6 +190,15 @@ class MBTCatsRatingViewController: UIViewController {
         activityIndicator.isHidden = true
     }
     
+    @IBAction func goToBreed(_ sender: Any) {
+        guard let name = breedButton.titleLabel?.text else {
+            return
+        }
+        let userInfo: [String:String] = [MBTBreedsTableViewController.BreedNameKey:name]
+        NotificationCenter.default.post(name: MBTBreedsTableViewController.SetBreed, object: nil, userInfo: userInfo)
+        tabBarController?.selectedIndex = 1
+    }
+    
     // MARK: - Notification handling
     @objc func setCat(notification: NSNotification) {
         guard let id = notification.userInfo?[MBTBreedDetailViewController.ImageIDKey] as? String else{
