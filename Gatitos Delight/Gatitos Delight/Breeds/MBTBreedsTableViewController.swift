@@ -62,8 +62,7 @@ class MBTBreedsTableViewController: UITableViewController {
     func selectBreed(with name:String) {
         loadViewIfNeeded()
         if let selectedBreedIndex = breedCells.firstIndex(where: {$0.name == name}) {
-            tableView.selectRow(at: IndexPath(row: selectedBreedIndex, section: 0), animated: false, scrollPosition: UITableView.ScrollPosition.none)
-            performSegue(withIdentifier: "showBreedDetail", sender: nil)
+            tableView.selectRow(at: IndexPath(row: selectedBreedIndex, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.none)
         } else {
             debugPrint("Couldn't find breed \(name)")
         }
