@@ -18,53 +18,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pyH-0F-BJT">
-                                <rect key="frame" x="178" y="324" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pyH-0F-BJT">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
-                                <rect key="frame" x="16" y="188" width="343" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
+                                <rect key="frame" x="16" y="134" width="343" height="355"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brS-bu-dJT">
                                 <rect key="frame" x="270" y="438" width="77" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Breed"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXw-3h-oQj">
-                                <rect key="frame" x="18" y="48" width="341" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RateThisCatBanner" translatesAutoresizingMaskIntoConstraints="NO" id="Ggx-YZ-BRY" userLabel="ActionBanner">
+                                <rect key="frame" x="90" y="70" width="195" height="29"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-y9-xh8">
-                                <rect key="frame" x="28" y="438" width="114" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pXw-3h-oQj">
+                                <rect key="frame" x="17" y="48" width="341" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="3Ig-p9-Psh"/>
+                                    <constraint firstAttribute="width" constant="341" id="UM9-zA-aTY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-y9-xh8">
+                                <rect key="frame" x="30.5" y="509" width="114" height="89"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <connections>
                                     <action selector="downvoteCurrentCat:" destination="9pv-A4-QxB" eventType="touchUpInside" id="rXe-I3-6TM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NayButton" translatesAutoresizingMaskIntoConstraints="NO" id="48Q-2F-Spu">
-                                <rect key="frame" x="28" y="438" width="114" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NayButton" translatesAutoresizingMaskIntoConstraints="NO" id="48Q-2F-Spu">
+                                <rect key="frame" x="30.5" y="509" width="114" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="Wqc-Ro-3Sk"/>
+                                    <constraint firstAttribute="height" constant="89" id="gtN-Q2-mWd"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svG-aD-0kZ">
-                                <rect key="frame" x="231" y="438" width="114" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svG-aD-0kZ">
+                                <rect key="frame" x="230.5" y="509" width="114" height="89"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <connections>
                                     <action selector="upvoteCurrentCat:" destination="9pv-A4-QxB" eventType="touchUpInside" id="CRR-Z4-Hrb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="YayButton" translatesAutoresizingMaskIntoConstraints="NO" id="rPf-NC-tNv" userLabel="YayButton">
-                                <rect key="frame" x="231" y="438" width="114" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RateThisCatBanner" translatesAutoresizingMaskIntoConstraints="NO" id="Ggx-YZ-BRY" userLabel="YayButton">
-                                <rect key="frame" x="90" y="555" width="197" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YayButton" translatesAutoresizingMaskIntoConstraints="NO" id="rPf-NC-tNv" userLabel="YayButton">
+                                <rect key="frame" x="230.5" y="509" width="114" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="hND-LO-pAg"/>
+                                    <constraint firstAttribute="height" constant="89" id="l3o-LQ-TVW"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98176127670000002" green="0.93944078679999998" blue="0.79291796680000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rPf-NC-tNv" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="100" id="1Fk-Np-XQQ"/>
+                            <constraint firstItem="pXw-3h-oQj" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="28" id="2dC-LG-Wru"/>
+                            <constraint firstItem="Ggx-YZ-BRY" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="50" id="8Jx-bo-4aI"/>
+                            <constraint firstItem="VEd-y9-xh8" firstAttribute="centerY" secondItem="48Q-2F-Spu" secondAttribute="centerY" id="Dj8-yw-0ZZ"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Ggx-YZ-BRY" secondAttribute="trailing" constant="90" id="IZ2-bi-KEo"/>
+                            <constraint firstItem="VEd-y9-xh8" firstAttribute="centerX" secondItem="48Q-2F-Spu" secondAttribute="centerX" id="JM2-xI-sgt"/>
+                            <constraint firstItem="kxg-2I-0M7" firstAttribute="firstBaseline" secondItem="pXw-3h-oQj" secondAttribute="baseline" constant="20" id="LvV-ck-lsd"/>
+                            <constraint firstItem="svG-aD-0kZ" firstAttribute="width" secondItem="rPf-NC-tNv" secondAttribute="width" id="Lvi-az-BTj"/>
+                            <constraint firstItem="Ggx-YZ-BRY" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="90" id="N9Z-2S-im0"/>
+                            <constraint firstItem="48Q-2F-Spu" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="-100" id="Qi3-cC-9NO"/>
+                            <constraint firstItem="svG-aD-0kZ" firstAttribute="height" secondItem="rPf-NC-tNv" secondAttribute="height" id="Rsr-sa-BaK"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="48Q-2F-Spu" secondAttribute="bottom" constant="20" id="YU9-cI-yHM"/>
+                            <constraint firstItem="VEd-y9-xh8" firstAttribute="height" secondItem="48Q-2F-Spu" secondAttribute="height" id="Z7y-TS-gRa"/>
+                            <constraint firstItem="pXw-3h-oQj" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="av4-UH-kEa"/>
+                            <constraint firstItem="48Q-2F-Spu" firstAttribute="firstBaseline" secondItem="kxg-2I-0M7" secondAttribute="baseline" constant="20" id="bWR-in-0VN"/>
+                            <constraint firstItem="kxg-2I-0M7" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="cbV-DT-duf"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="kxg-2I-0M7" secondAttribute="trailing" constant="16" id="fOS-6H-aOk"/>
+                            <constraint firstItem="rPf-NC-tNv" firstAttribute="centerY" secondItem="48Q-2F-Spu" secondAttribute="centerY" id="ihm-WX-HW9"/>
+                            <constraint firstItem="VEd-y9-xh8" firstAttribute="width" secondItem="48Q-2F-Spu" secondAttribute="width" id="lX6-X1-gfT"/>
+                            <constraint firstItem="svG-aD-0kZ" firstAttribute="centerY" secondItem="rPf-NC-tNv" secondAttribute="centerY" id="wQo-WO-BEJ"/>
+                            <constraint firstItem="svG-aD-0kZ" firstAttribute="centerX" secondItem="rPf-NC-tNv" secondAttribute="centerX" id="yZ2-6a-vZF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cats" image="first" id="acW-dT-cKf"/>
