@@ -192,5 +192,9 @@ class MBTBreedDetailViewController: UIViewController {
     
     func goToCatRating(with imageID:String){
         debugPrint(imageID)
+        // Using the notification center to keep things decoupled
+        let userInfo: [String: String] = [MBTBreedDetailViewController.ImageIDKey:imageID]
+        NotificationCenter.default.post(name: MBTCatsRatingViewController.SetCat, object: nil, userInfo: userInfo)
+        tabBarController?.selectedIndex = 0
     }
 }
