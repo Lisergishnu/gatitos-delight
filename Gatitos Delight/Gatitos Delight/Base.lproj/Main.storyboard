@@ -35,6 +35,14 @@
                                 <rect key="frame" x="18" y="48" width="341" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-y9-xh8">
+                                <rect key="frame" x="28" y="438" width="114" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <connections>
+                                    <action selector="downvoteCurrentCat:" destination="9pv-A4-QxB" eventType="touchUpInside" id="rXe-I3-6TM"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NayButton" translatesAutoresizingMaskIntoConstraints="NO" id="48Q-2F-Spu">
                                 <rect key="frame" x="28" y="438" width="114" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -51,14 +59,10 @@
                                 <rect key="frame" x="231" y="438" width="114" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-y9-xh8">
-                                <rect key="frame" x="28" y="438" width="114" height="89"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RateThisCatBanner" translatesAutoresizingMaskIntoConstraints="NO" id="Ggx-YZ-BRY" userLabel="YayButton">
+                                <rect key="frame" x="90" y="555" width="197" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <connections>
-                                    <action selector="downvoteCurrentCat:" destination="9pv-A4-QxB" eventType="touchUpInside" id="rXe-I3-6TM"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98176127670000002" green="0.93944078679999998" blue="0.79291796680000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -437,6 +441,7 @@
     <resources>
         <image name="BreedsTabIcon" width="30" height="30"/>
         <image name="NayButton" width="114" height="89"/>
+        <image name="RateThisCatBanner" width="196" height="29"/>
         <image name="YayButton" width="114" height="89"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
