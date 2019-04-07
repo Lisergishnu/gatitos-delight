@@ -101,7 +101,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cats" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Cats" image="CatRatingTabIcon" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="actionBannerImageView" destination="Ggx-YZ-BRY" id="ki3-bS-3BM"/>
                         <outlet property="activityIndicator" destination="pyH-0F-BJT" id="qjf-mj-g5u"/>
@@ -362,7 +362,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gVI-FE-UiT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" image="second" id="o0d-zQ-FXt"/>
+                    <tabBarItem key="tabBarItem" title="About" image="AboutTabIcon" id="o0d-zQ-FXt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fC-K5-BeV" sceneMemberID="firstResponder"/>
             </objects>
@@ -477,12 +477,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AboutTabIcon" width="30" height="30"/>
         <image name="BreedsTabIcon" width="30" height="30"/>
+        <image name="CatRatingTabIcon" width="30" height="30"/>
         <image name="LoadingBackground" width="100" height="100"/>
         <image name="NayButton" width="114" height="89"/>
         <image name="RateThisCatBanner" width="196" height="29"/>
         <image name="YayButton" width="114" height="89"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
