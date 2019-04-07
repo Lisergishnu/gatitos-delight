@@ -12,6 +12,11 @@ import SwiftyJSON
 import Alamofire_SwiftyJSON
 import Kingfisher
 
+struct MBTBreedImageModel {
+    var url: String
+    var imageID: String
+}
+
 class MBTBreedDetailViewController: UIViewController {
 
     @IBOutlet weak var catThumbnail1ImageView: UIImageView!
@@ -28,6 +33,8 @@ class MBTBreedDetailViewController: UIViewController {
     var breedInfoViewController: MBTBreedInfoViewController?
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    static let ImageIDKey: String = "imageID"
     
     var representedBreed : MBTBreedModel? {
         didSet{
@@ -52,7 +59,7 @@ class MBTBreedDetailViewController: UIViewController {
             infoVC.representedBreed = breed
         }
         
-        getThumbnails(with: breed.id) { imgurls in
+        getThumbnails(with: breed.id) { imgModels in
             var thumbnailsImageViews = [
              self.catThumbnail1ImageView,
              self.catThumbnail2ImageView,
@@ -66,10 +73,15 @@ class MBTBreedDetailViewController: UIViewController {
             ]
             
             var i = 0
-            for strurl in imgurls {
+            for model in imgModels {
                 thumbnailsImageViews[i]?.kf.indicatorType = .activity
-                let url = URL(string: strurl)
+                let url = URL(string: model.url)
                 thumbnailsImageViews[i]?.kf.setImage(with: url)
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.breedImageTapped(tapGestureRecognizer:)))
+                thumbnailsImageViews[i]?.isUserInteractionEnabled = true
+                thumbnailsImageViews[i]?.addGestureRecognizer(tap)
+                // We store the image id in the accesiblity identifier. A more elegant solution could consider subclassing UIImageView, but I consider it overkill for what we want to do.
+                thumbnailsImageViews[i]?.accessibilityIdentifier = model.imageID
                 i += 1
             }
             // Remove image views with no images
@@ -125,8 +137,16 @@ class MBTBreedDetailViewController: UIViewController {
         activityIndicatorView.isHidden = true
     }
     
+    @objc func breedImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let imageView = tapGestureRecognizer.view as! UIImageView
+        guard let imageID = imageView.accessibilityIdentifier else {
+            return
+        }
+        goToCatRating(with: imageID)
+    }
+    
     // MARK: - API request
-    func getThumbnails(with breedID:String, completion: (([String])->())? = nil) {
+    func getThumbnails(with breedID:String, completion: (([MBTBreedImageModel])->())? = nil) {
         let body: Parameters = [
             "mime_types": "jpg,png",
             "breed_ids": breedID,
@@ -141,19 +161,21 @@ class MBTBreedDetailViewController: UIViewController {
                             switch response.result {
                             case .success:
                                 debugPrint(response)
-                                var strUrls : [String] = []
+                                var breedImageModels : [MBTBreedImageModel] = []
                                 guard let responseValue = response.result.value else {
                                     debugPrint("Couldn't get a proper API response.")
                                     return
                                 }
                                 
                                 for (_,img):(String,JSON) in JSON(responseValue) {
-                                    guard let strUrl = img["url"].string else {
+                                    guard let strUrl = img["url"].string,
+                                        let id = img["id"].string else {
                                         continue
                                     }
-                                    strUrls.append(strUrl)
+                                    let model = MBTBreedImageModel(url: strUrl, imageID: id)
+                                    breedImageModels.append(model)
                                 }
-                                completion?(strUrls)
+                                completion?(breedImageModels)
                             case .failure(let error):
                                 debugPrint(error)
                             }
@@ -166,5 +188,9 @@ class MBTBreedDetailViewController: UIViewController {
         if segue.identifier == "embeddedInfo" {
             breedInfoViewController = segue.destination as? MBTBreedInfoViewController
         }
+    }
+    
+    func goToCatRating(with imageID:String){
+        debugPrint(imageID)
     }
 }
