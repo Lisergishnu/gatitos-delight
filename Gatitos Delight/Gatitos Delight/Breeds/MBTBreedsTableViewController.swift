@@ -15,9 +15,14 @@ class MBTBreedsTableViewController: UITableViewController {
 
     var breedCells: [MBTBreedModel] = []
     
+    static let SetBreed = Notification.Name("setBreed")
+    static let BreedNameKey: String = "breedName"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setBreed(notification:)), name: MBTBreedsTableViewController.SetBreed, object: nil)
+        
         populateArrayOfBreeds()
     }
     
@@ -51,7 +56,15 @@ class MBTBreedsTableViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
-            
+        }
+    }
+    
+    func selectBreed(with name:String) {
+        loadViewIfNeeded()
+        if let selectedBreedIndex = breedCells.firstIndex(where: {$0.name == name}) {
+            tableView.selectRow(at: IndexPath(row: selectedBreedIndex, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.none)
+        } else {
+            debugPrint("Couldn't find breed \(name)")
         }
     }
     
@@ -73,6 +86,7 @@ class MBTBreedsTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Transitions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showBreedDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
@@ -82,6 +96,14 @@ class MBTBreedsTableViewController: UITableViewController {
                 controller.representedBreed = breed
             }
         }
+    }
+    
+    // MARK: - Notification handling
+    @objc func setBreed(notification: NSNotification) {
+        guard let breedName = notification.userInfo?[MBTBreedsTableViewController.BreedNameKey] as? String else {
+            return
+        }
+        selectBreed(with: breedName)
     }
 }
 
