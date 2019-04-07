@@ -204,6 +204,7 @@
                     <connections>
                         <outlet property="photoDetailHeightConstraint" destination="mEK-h2-jVT" id="u29-hp-CmJ"/>
                         <outlet property="photoDetailImageView" destination="X2c-ot-5fO" id="9pe-GF-UKQ"/>
+                        <outlet property="photoDetailScrollView" destination="18Z-sD-ldx" id="nQW-eF-QMc"/>
                         <outlet property="photoDetailWidthConstraint" destination="xDk-kz-yuN" id="ddi-3V-doc"/>
                         <segue destination="yF4-Wp-son" kind="unwind" identifier="unwindDetail" unwindAction="unwindDetailViewWithSegue:" id="VYB-Tq-l3F"/>
                     </connections>

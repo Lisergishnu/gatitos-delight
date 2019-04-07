@@ -20,6 +20,7 @@ class MBTCatPhotoDetailViewController: UIViewController {
     @IBOutlet weak var photoDetailImageView: UIImageView!
     @IBOutlet weak var photoDetailHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var photoDetailWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var photoDetailScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,16 +47,17 @@ class MBTCatPhotoDetailViewController: UIViewController {
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        // Minimum scale so the image appears whole on the screen
+        let widthScale = view.bounds.width / photoDetailImageView.bounds.width
+        let heightScale = view.bounds.height / photoDetailImageView.bounds.height
+        let minScale = min(widthScale,heightScale)
+        photoDetailScrollView.minimumZoomScale = minScale
+        photoDetailScrollView.zoomScale = minScale
     }
-    */
-
 }
 
 extension MBTCatPhotoDetailViewController: UIScrollViewDelegate {
