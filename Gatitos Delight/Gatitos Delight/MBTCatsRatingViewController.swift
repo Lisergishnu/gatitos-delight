@@ -20,6 +20,10 @@ class MBTCatsRatingViewController: UIViewController {
     @IBOutlet weak var upvoteButton: UIButton!
     @IBOutlet weak var downvoteButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingBackgroundImageView: UIImageView!
+    @IBOutlet weak var actionBannerImageView: UIImageView!
+    @IBOutlet weak var upvoteImageView: UIImageView!
+    @IBOutlet weak var downvoteImageView: UIImageView!
     
     // The label of setCat notifications
     static let SetCat = Notification.Name("setCat")
@@ -115,7 +119,7 @@ class MBTCatsRatingViewController: UIViewController {
     // MARK: - UI Helper functions
     func fillUI(catInfoResponse: JSON, completion: (()->())? = nil) {
         debugPrint(catInfoResponse)
-        if let breedName = catInfoResponse["breeds"]["name"].string  {
+        if let breedName = catInfoResponse["breeds"][0]["name"].string  {
             breedButton.setTitle(breedName, for: UIControl.State.normal)
         } else {
             breedButton.setTitle("", for: UIControl.State.normal)
@@ -161,15 +165,27 @@ class MBTCatsRatingViewController: UIViewController {
         breedButton.isHidden = true
         upvoteButton.isHidden = true
         downvoteButton.isHidden = true
+        upvoteImageView.isHidden = true
+        downvoteImageView.isHidden = true
+        actionBannerImageView.isHidden = true
+        
+        loadingBackgroundImageView.isHidden = false
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
     
     func hideLoadingUI() {
         catImageView.isHidden = false
-        breedButton.isHidden = false
+        if breedButton.currentTitle != "" {
+                breedButton.isHidden = false
+        }
         upvoteButton.isHidden = false
         downvoteButton.isHidden = false
+        upvoteImageView.isHidden = false
+        downvoteImageView.isHidden = false
+        actionBannerImageView.isHidden = false
+        
+        loadingBackgroundImageView.isHidden = true
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
     }
