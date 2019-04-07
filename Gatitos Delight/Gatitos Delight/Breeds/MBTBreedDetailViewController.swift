@@ -64,6 +64,12 @@ class MBTBreedDetailViewController: UIViewController {
                 thumbnailsImageViews[i]?.kf.setImage(with: url)
                 i += 1
             }
+            // Remove image views with no images
+            if i < 9 {
+                for j in (i-1)..<9 {
+                    thumbnailsImageViews[j]?.removeFromSuperview()
+                }
+            }
         }
     }
     

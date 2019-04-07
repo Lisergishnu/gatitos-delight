@@ -208,6 +208,7 @@
                             <constraint firstItem="BVc-3p-QH9" firstAttribute="centerY" secondItem="6IO-F5-Tqi" secondAttribute="centerY" id="I7g-fJ-kqx"/>
                             <constraint firstItem="XtD-du-bwa" firstAttribute="centerY" secondItem="6IO-F5-Tqi" secondAttribute="centerY" id="JQu-BE-6wY"/>
                             <constraint firstItem="jhm-vC-c0v" firstAttribute="top" secondItem="6IO-F5-Tqi" secondAttribute="bottom" constant="22" id="Nqw-FG-K0O"/>
+                            <constraint firstItem="jhm-vC-c0v" firstAttribute="top" secondItem="VUz-C5-W2a" secondAttribute="bottom" priority="998" constant="22" id="OEp-IQ-g8W"/>
                             <constraint firstItem="jhm-vC-c0v" firstAttribute="trailing" secondItem="rVa-iT-xpM" secondAttribute="trailing" id="QBi-BT-vAT"/>
                             <constraint firstItem="jhm-vC-c0v" firstAttribute="leading" secondItem="rVa-iT-xpM" secondAttribute="leading" id="UWF-2o-Jrc"/>
                             <constraint firstItem="6IO-F5-Tqi" firstAttribute="top" secondItem="KTk-jN-aRR" secondAttribute="bottom" constant="22" id="Uhn-aO-4cL"/>
@@ -221,6 +222,7 @@
                             <constraint firstItem="VUz-C5-W2a" firstAttribute="top" secondItem="rVa-iT-xpM" secondAttribute="top" constant="22" id="l4m-iJ-ANb"/>
                             <constraint firstItem="ZKw-Pw-Oop" firstAttribute="centerY" secondItem="KTk-jN-aRR" secondAttribute="centerY" id="oBr-pq-77g"/>
                             <constraint firstItem="6IO-F5-Tqi" firstAttribute="leading" secondItem="rVa-iT-xpM" secondAttribute="leading" constant="16" id="pVT-VV-JfC"/>
+                            <constraint firstItem="jhm-vC-c0v" firstAttribute="top" secondItem="KTk-jN-aRR" secondAttribute="bottom" priority="999" constant="22" id="tvE-Br-4BB"/>
                             <constraint firstItem="ZKw-Pw-Oop" firstAttribute="centerX" secondItem="GXP-v5-eHY" secondAttribute="centerX" id="wB8-bk-xVx"/>
                             <constraint firstItem="oUi-8z-nwu" firstAttribute="leading" secondItem="VUz-C5-W2a" secondAttribute="trailing" constant="22" id="wIF-gW-haP"/>
                         </constraints>
