@@ -176,7 +176,9 @@ class MBTCatsRatingViewController: UIViewController {
     
     func hideLoadingUI() {
         catImageView.isHidden = false
-        breedButton.isHidden = false
+        if breedButton.currentTitle != "" {
+                breedButton.isHidden = false
+        }
         upvoteButton.isHidden = false
         downvoteButton.isHidden = false
         upvoteImageView.isHidden = false

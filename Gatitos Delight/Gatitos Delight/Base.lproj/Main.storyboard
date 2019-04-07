@@ -69,9 +69,13 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brS-bu-dJT">
-                                <rect key="frame" x="304" y="456" width="41" height="30"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="Breed"/>
+                                <rect key="frame" x="278" y="445" width="65" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Breed" backgroundImage="ButtonInset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98176127670000002" green="0.93944078679999998" blue="0.79291796680000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,7 +83,7 @@
                             <constraint firstItem="rPf-NC-tNv" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="100" id="1Fk-Np-XQQ"/>
                             <constraint firstItem="pXw-3h-oQj" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="2dC-LG-Wru"/>
                             <constraint firstItem="Ggx-YZ-BRY" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="8Jx-bo-4aI"/>
-                            <constraint firstItem="48Q-2F-Spu" firstAttribute="top" secondItem="brS-bu-dJT" secondAttribute="bottom" constant="23" id="BLt-IK-5vK"/>
+                            <constraint firstItem="48Q-2F-Spu" firstAttribute="top" secondItem="brS-bu-dJT" secondAttribute="bottom" constant="36" id="BLt-IK-5vK"/>
                             <constraint firstItem="VEd-y9-xh8" firstAttribute="centerY" secondItem="48Q-2F-Spu" secondAttribute="centerY" id="Dj8-yw-0ZZ"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Ggx-YZ-BRY" secondAttribute="trailing" constant="90" id="IZ2-bi-KEo"/>
                             <constraint firstItem="VEd-y9-xh8" firstAttribute="centerX" secondItem="48Q-2F-Spu" secondAttribute="centerX" id="JM2-xI-sgt"/>
@@ -99,7 +103,7 @@
                             <constraint firstItem="rPf-NC-tNv" firstAttribute="centerY" secondItem="48Q-2F-Spu" secondAttribute="centerY" id="ihm-WX-HW9"/>
                             <constraint firstItem="VEd-y9-xh8" firstAttribute="width" secondItem="48Q-2F-Spu" secondAttribute="width" id="lX6-X1-gfT"/>
                             <constraint firstItem="1eu-t2-6Mp" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ssR-fz-aWZ"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="brS-bu-dJT" secondAttribute="trailing" constant="30" id="t8m-4e-LFF"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="brS-bu-dJT" secondAttribute="trailing" constant="32" id="t8m-4e-LFF"/>
                             <constraint firstItem="svG-aD-0kZ" firstAttribute="centerY" secondItem="rPf-NC-tNv" secondAttribute="centerY" id="wQo-WO-BEJ"/>
                             <constraint firstItem="pyH-0F-BJT" firstAttribute="centerX" secondItem="1eu-t2-6Mp" secondAttribute="centerX" id="xPT-mP-y2f"/>
                             <constraint firstItem="svG-aD-0kZ" firstAttribute="centerX" secondItem="rPf-NC-tNv" secondAttribute="centerX" id="yZ2-6a-vZF"/>
@@ -493,6 +497,7 @@
         <image name="AboutTabIcon" width="30" height="30"/>
         <image name="AboutText" width="286" height="96"/>
         <image name="BreedsTabIcon" width="30" height="30"/>
+        <image name="ButtonInset" width="14.5" height="14.5"/>
         <image name="CatRatingTabIcon" width="30" height="30"/>
         <image name="LoadingBackground" width="100" height="100"/>
         <image name="NayButton" width="114" height="89"/>
