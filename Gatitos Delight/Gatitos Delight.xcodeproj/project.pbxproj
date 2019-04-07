@@ -17,6 +17,7 @@
 		FF58395E2258E9AD008A1911 /* MBTAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58395D2258E9AD008A1911 /* MBTAboutViewController.swift */; };
 		FF5839612258EDBE008A1911 /* MBTCatAPIHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5839602258EDBE008A1911 /* MBTCatAPIHeader.swift */; };
 		FF58396422595F7A008A1911 /* MBTBreedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58396322595F7A008A1911 /* MBTBreedDetailViewController.swift */; };
+		FF5839662259FED7008A1911 /* MBTBreedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5839652259FED7008A1911 /* MBTBreedInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FF58395D2258E9AD008A1911 /* MBTAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTAboutViewController.swift; sourceTree = "<group>"; };
 		FF5839602258EDBE008A1911 /* MBTCatAPIHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTCatAPIHeader.swift; sourceTree = "<group>"; };
 		FF58396322595F7A008A1911 /* MBTBreedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedDetailViewController.swift; sourceTree = "<group>"; };
+		FF5839652259FED7008A1911 /* MBTBreedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				FF58394D2258E07F008A1911 /* MBTBreedsTableViewController.swift */,
 				FF58396322595F7A008A1911 /* MBTBreedDetailViewController.swift */,
+				FF5839652259FED7008A1911 /* MBTBreedInfoViewController.swift */,
 			);
 			path = Breeds;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				FF5839612258EDBE008A1911 /* MBTCatAPIHeader.swift in Sources */,
 				FF58394A2258E07F008A1911 /* AppDelegate.swift in Sources */,
 				FF58394C2258E07F008A1911 /* MBTCatsRatingViewController.swift in Sources */,
+				FF5839662259FED7008A1911 /* MBTBreedInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

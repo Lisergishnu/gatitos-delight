@@ -18,6 +18,7 @@ struct MBTBreedCellModel {
     var lifeSpan: String
     var temperament: String
     var description: String
+    var weight: String
 }
 
 class MBTBreedsTableViewController: UITableViewController {
@@ -45,7 +46,8 @@ class MBTBreedsTableViewController: UITableViewController {
                     let country = breed["origin"].string,
                     let lifeSpan = breed["life_span"].string,
                     let temperament = breed["temperament"].string,
-                    let description = breed["description"].string else {
+                    let description = breed["description"].string,
+                    let weight = breed["weight"]["metric"].string else {
                         continue
                 }
                 let b = MBTBreedCellModel(id: id,
@@ -53,7 +55,8 @@ class MBTBreedsTableViewController: UITableViewController {
                                           country: country,
                                           lifeSpan: lifeSpan,
                                           temperament: temperament,
-                                          description: description)
+                                          description: description,
+                                          weight: weight)
                 self.breedCells.append(b)
             }
             

@@ -25,6 +25,8 @@ class MBTBreedDetailViewController: UIViewController {
     @IBOutlet weak var catThumbnail9ImageView: UIImageView!
     @IBOutlet weak var breedInfoContainerView: UIView!
     
+    var breedInfoViewController: MBTBreedInfoViewController?
+    
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var representedBreed : MBTBreedCellModel? {
@@ -45,6 +47,11 @@ class MBTBreedDetailViewController: UIViewController {
         }
         showLoadingUI()
         navigationItem.title = breed.name
+        
+        if let infoVC = breedInfoViewController {
+            infoVC.representedBreed = breed
+        }
+        
         getThumbnails(with: breed.id) { imgurls in
             var thumbnailsImageViews = [
              self.catThumbnail1ImageView,
@@ -153,15 +160,11 @@ class MBTBreedDetailViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: - Transitions
+    // Embedding a view controller is a kind of segue, so we use this function for getting a reference to the breed info VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "embeddedInfo" {
+            breedInfoViewController = segue.destination as? MBTBreedInfoViewController
+        }
     }
-    */
-
 }
