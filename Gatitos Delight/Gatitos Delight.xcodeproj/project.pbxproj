@@ -19,6 +19,7 @@
 		FF58396422595F7A008A1911 /* MBTBreedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58396322595F7A008A1911 /* MBTBreedDetailViewController.swift */; };
 		FF5839662259FED7008A1911 /* MBTBreedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5839652259FED7008A1911 /* MBTBreedInfoViewController.swift */; };
 		FF583968225A0320008A1911 /* MBTBreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF583967225A0320008A1911 /* MBTBreedModel.swift */; };
+		FFC37B1A225A93A00000C7BA /* MBTCatPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC37B19225A93A00000C7BA /* MBTCatPhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FF58396322595F7A008A1911 /* MBTBreedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedDetailViewController.swift; sourceTree = "<group>"; };
 		FF5839652259FED7008A1911 /* MBTBreedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedInfoViewController.swift; sourceTree = "<group>"; };
 		FF583967225A0320008A1911 /* MBTBreedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedModel.swift; sourceTree = "<group>"; };
+		FFC37B19225A93A00000C7BA /* MBTCatPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTCatPhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +92,10 @@
 		FF5839482258E07F008A1911 /* Gatitos Delight */ = {
 			isa = PBXGroup;
 			children = (
+				FFC37B18225A937B0000C7BA /* Cats Rating */,
 				FF58396222595F57008A1911 /* Breeds */,
 				FF58395F2258ED8D008A1911 /* Cat API */,
 				FF5839492258E07F008A1911 /* AppDelegate.swift */,
-				FF58394B2258E07F008A1911 /* MBTCatsRatingViewController.swift */,
 				FF58395D2258E9AD008A1911 /* MBTAboutViewController.swift */,
 				FF58394F2258E07F008A1911 /* Main.storyboard */,
 				FF5839522258E081008A1911 /* Assets.xcassets */,
@@ -120,6 +122,15 @@
 				FF583967225A0320008A1911 /* MBTBreedModel.swift */,
 			);
 			path = Breeds;
+			sourceTree = "<group>";
+		};
+		FFC37B18225A937B0000C7BA /* Cats Rating */ = {
+			isa = PBXGroup;
+			children = (
+				FF58394B2258E07F008A1911 /* MBTCatsRatingViewController.swift */,
+				FFC37B19225A93A00000C7BA /* MBTCatPhotoDetailViewController.swift */,
+			);
+			path = "Cats Rating";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF58395E2258E9AD008A1911 /* MBTAboutViewController.swift in Sources */,
+				FFC37B1A225A93A00000C7BA /* MBTCatPhotoDetailViewController.swift in Sources */,
 				FF58394E2258E07F008A1911 /* MBTBreedsTableViewController.swift in Sources */,
 				FF58396422595F7A008A1911 /* MBTBreedDetailViewController.swift in Sources */,
 				FF5839612258EDBE008A1911 /* MBTCatAPIHeader.swift in Sources */,
