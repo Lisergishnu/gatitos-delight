@@ -18,6 +18,8 @@ class MBTCatPhotoDetailViewController: UIViewController {
     }
     
     @IBOutlet weak var photoDetailImageView: UIImageView!
+    @IBOutlet weak var photoDetailHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var photoDetailWidthConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,20 +35,15 @@ class MBTCatPhotoDetailViewController: UIViewController {
         }
         
         photoDetailImageView.kf.indicatorType = .activity
-        photoDetailImageView.kf.setImage(with: url)
-    }
-
-    @IBAction func panningToExit(_ sender: UIPanGestureRecognizer) {
-        let percentThreshold: CGFloat = 0.3
-        
-        let translation = sender.translation(in: view)
-        let verticalMovement = translation.y / view.bounds.height
-        let downwardMovement = fmax(verticalMovement, 0.0)
-        let downwardMovementPercent = fmin(downwardMovement, 1.0)
-        let progress = downwardMovementPercent
-        
-        if progress > percentThreshold {
-            performSegue(withIdentifier: "unwindDetail", sender: self)
+        photoDetailImageView.kf.setImage(with: url) {
+            result in
+            switch result {
+            case .success(let value):
+                self.photoDetailWidthConstraint.constant = value.image.size.width
+                self.photoDetailHeightConstraint.constant = value.image.size.height
+            case .failure(let error):
+                print (error)
+            }
         }
     }
     /*
@@ -59,4 +56,10 @@ class MBTCatPhotoDetailViewController: UIViewController {
     }
     */
 
+}
+
+extension MBTCatPhotoDetailViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return photoDetailImageView
+    }
 }
