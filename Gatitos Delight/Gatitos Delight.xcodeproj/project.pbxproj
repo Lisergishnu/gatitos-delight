@@ -108,6 +108,7 @@
 		FF58395F2258ED8D008A1911 /* Cat API */ = {
 			isa = PBXGroup;
 			children = (
+				FF583967225A0320008A1911 /* MBTBreedModel.swift */,
 				FF5839602258EDBE008A1911 /* MBTCatAPIHeader.swift */,
 			);
 			path = "Cat API";
@@ -119,7 +120,6 @@
 				FF58394D2258E07F008A1911 /* MBTBreedsTableViewController.swift */,
 				FF58396322595F7A008A1911 /* MBTBreedDetailViewController.swift */,
 				FF5839652259FED7008A1911 /* MBTBreedInfoViewController.swift */,
-				FF583967225A0320008A1911 /* MBTBreedModel.swift */,
 			);
 			path = Breeds;
 			sourceTree = "<group>";
