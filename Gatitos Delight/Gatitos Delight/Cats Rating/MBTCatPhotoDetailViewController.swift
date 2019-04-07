@@ -7,15 +7,34 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MBTCatPhotoDetailViewController: UIViewController {
 
+    var photoURL: URL? {
+        didSet {
+            populateUI()
+        }
+    }
+    
+    @IBOutlet weak var photoDetailImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - UI functionality
+    func populateUI() {
+        loadViewIfNeeded()
+        guard let url = photoURL else {
+            return
+        }
+        
+        photoDetailImageView.kf.indicatorType = .activity
+        photoDetailImageView.kf.setImage(with: url)
+    }
 
     /*
     // MARK: - Navigation

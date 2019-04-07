@@ -24,7 +24,7 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pyH-0F-BJT">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
                                 <rect key="frame" x="16" y="89" width="343" height="400"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -133,7 +133,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="lNZ-t4-GGs"/>
+                <tapGestureRecognizer id="lNZ-t4-GGs">
+                    <connections>
+                        <action selector="openDetail:" destination="9pv-A4-QxB" id="Ubf-8F-7MW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
@@ -145,19 +149,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X2c-ot-5fO">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18Z-sD-ldx">
+                                <rect key="frame" x="-20" y="0.0" width="415" height="687"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X2c-ot-5fO">
+                                        <rect key="frame" x="20" y="20" width="375" height="647"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="X2c-ot-5fO" firstAttribute="top" secondItem="JWn-qm-9bi" secondAttribute="top" id="9yy-d5-Eny"/>
-                            <constraint firstItem="JWn-qm-9bi" firstAttribute="bottom" secondItem="X2c-ot-5fO" secondAttribute="bottom" id="a54-UM-qhz"/>
-                            <constraint firstItem="JWn-qm-9bi" firstAttribute="trailing" secondItem="X2c-ot-5fO" secondAttribute="trailing" id="vDE-eh-d1O"/>
-                            <constraint firstItem="X2c-ot-5fO" firstAttribute="leading" secondItem="JWn-qm-9bi" secondAttribute="leading" id="wXV-Rj-NRm"/>
+                            <constraint firstAttribute="trailing" secondItem="18Z-sD-ldx" secondAttribute="trailing" id="7HI-to-VM6"/>
+                            <constraint firstAttribute="bottom" secondItem="18Z-sD-ldx" secondAttribute="bottom" id="FgF-Lz-Lv7"/>
+                            <constraint firstItem="18Z-sD-ldx" firstAttribute="top" secondItem="Mac-H7-uxz" secondAttribute="top" id="az8-YZ-uwG"/>
+                            <constraint firstItem="18Z-sD-ldx" firstAttribute="leading" secondItem="Mac-H7-uxz" secondAttribute="leading" id="xtQ-XA-3bW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JWn-qm-9bi"/>
                     </view>
+                    <connections>
+                        <outlet property="photoDetailImageView" destination="X2c-ot-5fO" id="9pe-GF-UKQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOT-gd-FGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

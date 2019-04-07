@@ -28,8 +28,9 @@ class MBTCatsRatingViewController: UIViewController {
     // The label of setCat notifications
     static let SetCat = Notification.Name("setCat")
     
-    // This variable is set everytime fillUI is called
+    // These variables are set everytime fillUI is called
     var currentCatID: String?
+    var currentCatURL: URL?
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -132,6 +133,7 @@ class MBTCatsRatingViewController: UIViewController {
         
         if let imageURL = catInfoResponse["url"].string {
             let url = URL(string: imageURL)
+            currentCatURL = url
             catImageView.kf.cancelDownloadTask()
             let processor = DownsamplingImageProcessor(size: catImageView.bounds.size)
                             >> RoundCornerImageProcessor(cornerRadius: 20)
@@ -214,6 +216,20 @@ class MBTCatsRatingViewController: UIViewController {
         let userInfo: [String:String] = [MBTBreedsTableViewController.BreedNameKey:name]
         NotificationCenter.default.post(name: MBTBreedsTableViewController.SetBreed, object: nil, userInfo: userInfo)
         tabBarController?.selectedIndex = 1
+    }
+    
+    @IBAction func openDetail(_ sender: Any) {
+        performSegue(withIdentifier: "zoom", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "zoom" {
+            guard let controller = segue.destination as? MBTCatPhotoDetailViewController,
+                let url = currentCatURL else {
+                return
+            }
+            controller.photoURL = url
+        }
     }
     
     // MARK: - Notification handling
