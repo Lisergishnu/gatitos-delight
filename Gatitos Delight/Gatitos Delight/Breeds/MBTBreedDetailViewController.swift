@@ -74,9 +74,16 @@ class MBTBreedDetailViewController: UIViewController {
             
             var i = 0
             for model in imgModels {
-                thumbnailsImageViews[i]?.kf.indicatorType = .activity
                 let url = URL(string: model.url)
-                thumbnailsImageViews[i]?.kf.setImage(with: url)
+                let processor = DownsamplingImageProcessor(size: thumbnailsImageViews[i]!.bounds.size)
+                thumbnailsImageViews[i]?.kf.indicatorType = .activity
+                thumbnailsImageViews[i]?.kf.setImage(
+                    with: url,
+                    options: [
+                        .processor(processor),
+                        .scaleFactor(UIScreen.main.scale),
+                        .transition(.fade(1)),
+                        .cacheOriginalImage])
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.breedImageTapped(tapGestureRecognizer:)))
                 thumbnailsImageViews[i]?.isUserInteractionEnabled = true
                 thumbnailsImageViews[i]?.addGestureRecognizer(tap)

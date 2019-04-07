@@ -30,20 +30,21 @@ class MBTCatsRatingViewController: UIViewController {
     
     // This variable is set everytime fillUI is called
     var currentCatID: String?
-    
+
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         NotificationCenter.default.addObserver(self, selector: #selector(setCat(notification:)), name: MBTCatsRatingViewController.SetCat, object: nil)
         
         showLoadingUI()
-        getRandomCat() {
+        askForRandomCat() {
             self.hideLoadingUI()
         }
     }
-    
+
     // MARK: - Cat API functionality
-    func getRandomCat(completion: (()->())? = nil) {
+    func askForRandomCat(completion: (()->())? = nil) {
         Alamofire.request("https://api.thecatapi.com/v1/images/search", headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
             guard let responseValue = response.result.value?[0] else {
                 debugPrint("Couldn't get a proper API response.")
@@ -55,7 +56,7 @@ class MBTCatsRatingViewController: UIViewController {
         }
     }
     
-    func getCat(with imageID:String, completion: (()->())? = nil) {
+    func askForCat(with imageID:String, completion: (()->())? = nil) {
         Alamofire.request("https://api.thecatapi.com/v1/images/"+imageID, headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
             guard let responseValue = response.result.value else {
                 debugPrint("Couldn't get a proper API response.")
@@ -87,7 +88,7 @@ class MBTCatsRatingViewController: UIViewController {
             }
         }
     }
-    
+
     // MARK: - Voting handlers
     @IBAction func upvoteCurrentCat(_ sender: Any) {
         guard let id = currentCatID else {
@@ -95,7 +96,7 @@ class MBTCatsRatingViewController: UIViewController {
         }
         showLoadingUI()
         emitVote(with: id, value: 1) {
-            self.getRandomCat() {
+            self.askForRandomCat() {
                 self.hideLoadingUI()
             }
         }
@@ -109,7 +110,7 @@ class MBTCatsRatingViewController: UIViewController {
         
         showLoadingUI()
         emitVote(with: id, value: 0) {
-            self.getRandomCat() {
+            self.askForRandomCat() {
                 self.hideLoadingUI()
             }
         }
@@ -132,6 +133,15 @@ class MBTCatsRatingViewController: UIViewController {
         if let imageURL = catInfoResponse["url"].string {
             let url = URL(string: imageURL)
             catImageView.kf.cancelDownloadTask()
+            let processor = DownsamplingImageProcessor(size: catImageView.bounds.size)
+                            >> RoundCornerImageProcessor(cornerRadius: 20)
+            catImageView.kf.indicatorType = .activity
+            catImageView?.kf.setImage(
+                with: url,
+                options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1))])
             catImageView.kf.setImage(with: url) { result in
                 switch result {
                 case .success(let value):
@@ -139,6 +149,12 @@ class MBTCatsRatingViewController: UIViewController {
                     completion?()
                 case .failure(let error):
                     print(error)
+                    DispatchQueue.main.async {
+                        self.showLoadingUI()
+                        self.askForRandomCat() {
+                            self.hideLoadingUI()
+                        }
+                    }
                 }
             }
         } else {
@@ -190,6 +206,7 @@ class MBTCatsRatingViewController: UIViewController {
         activityIndicator.isHidden = true
     }
     
+    // MARK: - Transitions
     @IBAction func goToBreed(_ sender: Any) {
         guard let name = breedButton.titleLabel?.text else {
             return
@@ -205,7 +222,7 @@ class MBTCatsRatingViewController: UIViewController {
             return
         }
         showLoadingUI()
-        getCat(with: id) {
+        askForCat(with: id) {
             self.hideLoadingUI()
         }
     }
