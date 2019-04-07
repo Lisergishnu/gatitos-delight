@@ -51,7 +51,7 @@ class MBTCatPhotoDetailViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        // Minimum scale so the image appears whole on the screen
+        // The min scale calculation helps provide pinch functionality, while keeping the image always fitted to the width or height of the screen.
         let widthScale = view.bounds.width / photoDetailImageView.bounds.width
         let heightScale = view.bounds.height / photoDetailImageView.bounds.height
         let minScale = min(widthScale,heightScale)
