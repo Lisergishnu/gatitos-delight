@@ -27,11 +27,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
                                 <rect key="frame" x="16" y="89" width="343" height="400"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brS-bu-dJT">
-                                <rect key="frame" x="270" y="438" width="77" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Breed"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RateThisCatBanner" translatesAutoresizingMaskIntoConstraints="NO" id="Ggx-YZ-BRY" userLabel="ActionBanner">
                                 <rect key="frame" x="90" y="40" width="195" height="29"/>
                                 <constraints>
@@ -73,12 +68,18 @@
                                     <constraint firstAttribute="height" constant="89" id="l3o-LQ-TVW"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brS-bu-dJT">
+                                <rect key="frame" x="304" y="456" width="41" height="30"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Breed"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98176127670000002" green="0.93944078679999998" blue="0.79291796680000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rPf-NC-tNv" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="100" id="1Fk-Np-XQQ"/>
                             <constraint firstItem="pXw-3h-oQj" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="2dC-LG-Wru"/>
                             <constraint firstItem="Ggx-YZ-BRY" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="8Jx-bo-4aI"/>
+                            <constraint firstItem="48Q-2F-Spu" firstAttribute="top" secondItem="brS-bu-dJT" secondAttribute="bottom" constant="23" id="BLt-IK-5vK"/>
                             <constraint firstItem="VEd-y9-xh8" firstAttribute="centerY" secondItem="48Q-2F-Spu" secondAttribute="centerY" id="Dj8-yw-0ZZ"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Ggx-YZ-BRY" secondAttribute="trailing" constant="90" id="IZ2-bi-KEo"/>
                             <constraint firstItem="VEd-y9-xh8" firstAttribute="centerX" secondItem="48Q-2F-Spu" secondAttribute="centerX" id="JM2-xI-sgt"/>
@@ -98,6 +99,7 @@
                             <constraint firstItem="rPf-NC-tNv" firstAttribute="centerY" secondItem="48Q-2F-Spu" secondAttribute="centerY" id="ihm-WX-HW9"/>
                             <constraint firstItem="VEd-y9-xh8" firstAttribute="width" secondItem="48Q-2F-Spu" secondAttribute="width" id="lX6-X1-gfT"/>
                             <constraint firstItem="1eu-t2-6Mp" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ssR-fz-aWZ"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="brS-bu-dJT" secondAttribute="trailing" constant="30" id="t8m-4e-LFF"/>
                             <constraint firstItem="svG-aD-0kZ" firstAttribute="centerY" secondItem="rPf-NC-tNv" secondAttribute="centerY" id="wQo-WO-BEJ"/>
                             <constraint firstItem="pyH-0F-BJT" firstAttribute="centerX" secondItem="1eu-t2-6Mp" secondAttribute="centerX" id="xPT-mP-y2f"/>
                             <constraint firstItem="svG-aD-0kZ" firstAttribute="centerX" secondItem="rPf-NC-tNv" secondAttribute="centerX" id="yZ2-6a-vZF"/>

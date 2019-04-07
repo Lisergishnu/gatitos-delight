@@ -119,7 +119,7 @@ class MBTCatsRatingViewController: UIViewController {
     // MARK: - UI Helper functions
     func fillUI(catInfoResponse: JSON, completion: (()->())? = nil) {
         debugPrint(catInfoResponse)
-        if let breedName = catInfoResponse["breeds"]["name"].string  {
+        if let breedName = catInfoResponse["breeds"][0]["name"].string  {
             breedButton.setTitle(breedName, for: UIControl.State.normal)
         } else {
             breedButton.setTitle("", for: UIControl.State.normal)
