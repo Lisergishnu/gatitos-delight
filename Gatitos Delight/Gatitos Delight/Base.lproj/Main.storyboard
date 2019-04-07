@@ -34,6 +34,9 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RateThisCatBanner" translatesAutoresizingMaskIntoConstraints="NO" id="Ggx-YZ-BRY" userLabel="ActionBanner">
                                 <rect key="frame" x="90" y="70" width="195" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ggx-YZ-BRY" secondAttribute="height" multiplier="195:29" id="NhW-tF-thE"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pXw-3h-oQj">
                                 <rect key="frame" x="17" y="48" width="341" height="66"/>
@@ -119,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Breeds-->
+        <!--Cat Breeds-->
         <scene sceneID="eCh-qN-Pr4">
             <objects>
                 <tableViewController id="76u-Yq-KLb" customClass="MBTBreedsTableViewController" customModule="Gatitos_Delight" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,7 +165,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Breeds" id="CFT-ms-f3V"/>
-                    <navigationItem key="navigationItem" id="zFF-AN-nVX"/>
+                    <navigationItem key="navigationItem" title="Cat Breeds" id="zFF-AN-nVX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmP-nn-ejv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
