@@ -232,6 +232,9 @@ class MBTCatsRatingViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindDetailView(segue: UIStoryboardSegue) {
+    }
+    
     // MARK: - Notification handling
     @objc func setCat(notification: NSNotification) {
         guard let id = notification.userInfo?[MBTBreedDetailViewController.ImageIDKey] as? String else{

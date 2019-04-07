@@ -157,6 +157,10 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Fh0-rw-6nt" appends="YES" id="bCD-a1-I2f"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,9 +174,16 @@
                     </view>
                     <connections>
                         <outlet property="photoDetailImageView" destination="X2c-ot-5fO" id="9pe-GF-UKQ"/>
+                        <segue destination="yF4-Wp-son" kind="unwind" identifier="unwindDetail" unwindAction="unwindDetailViewWithSegue:" id="VYB-Tq-l3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOT-gd-FGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yF4-Wp-son" userLabel="Exit" sceneMemberID="exit"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Fh0-rw-6nt">
+                    <connections>
+                        <action selector="panningToExit:" destination="Fxn-i2-8is" id="K7p-n4-Oil"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1545" y="-321"/>
         </scene>

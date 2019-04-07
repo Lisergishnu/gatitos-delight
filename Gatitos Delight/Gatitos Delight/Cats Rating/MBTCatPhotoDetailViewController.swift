@@ -36,6 +36,19 @@ class MBTCatPhotoDetailViewController: UIViewController {
         photoDetailImageView.kf.setImage(with: url)
     }
 
+    @IBAction func panningToExit(_ sender: UIPanGestureRecognizer) {
+        let percentThreshold: CGFloat = 0.3
+        
+        let translation = sender.translation(in: view)
+        let verticalMovement = translation.y / view.bounds.height
+        let downwardMovement = fmax(verticalMovement, 0.0)
+        let downwardMovementPercent = fmin(downwardMovement, 1.0)
+        let progress = downwardMovementPercent
+        
+        if progress > percentThreshold {
+            performSegue(withIdentifier: "unwindDetail", sender: self)
+        }
+    }
     /*
     // MARK: - Navigation
 
