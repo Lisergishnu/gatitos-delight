@@ -11,15 +11,9 @@ import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
-struct MBTBreedCellModel {
-    var id: String
-    var name: String
-    var country: String
-}
-
 class MBTBreedsTableViewController: UITableViewController {
 
-    var breedCells: [MBTBreedCellModel] = []
+    var breedCells: [MBTBreedModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +33,20 @@ class MBTBreedsTableViewController: UITableViewController {
             for (_,breed):(String, JSON) in JSON(responseValue) {
                 guard let id = breed["id"].string,
                     let name = breed["name"].string,
-                    let country = breed["origin"].string else {
+                    let country = breed["origin"].string,
+                    let lifeSpan = breed["life_span"].string,
+                    let temperament = breed["temperament"].string,
+                    let description = breed["description"].string,
+                    let weight = breed["weight"]["metric"].string else {
                         continue
                 }
-                let b = MBTBreedCellModel(id: id, name: name, country: country)
+                let b = MBTBreedModel(id: id,
+                                          name: name,
+                                          country: country,
+                                          lifeSpan: lifeSpan,
+                                          temperament: temperament,
+                                          description: description,
+                                          weight: weight)
                 self.breedCells.append(b)
             }
             
@@ -67,6 +71,17 @@ class MBTBreedsTableViewController: UITableViewController {
         cell.detailTextLabel?.text = breedCells[indexPath.row].country
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showBreedDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let breed = breedCells[indexPath.row]
+                let controller = segue.destination as! MBTBreedDetailViewController
+                
+                controller.representedBreed = breed
+            }
+        }
     }
 }
 
