@@ -23,7 +23,9 @@ class MBTBreedDetailViewController: UIViewController {
     @IBOutlet weak var catThumbnail7ImageView: UIImageView!
     @IBOutlet weak var catThumbnail8ImageView: UIImageView!
     @IBOutlet weak var catThumbnail9ImageView: UIImageView!
+    @IBOutlet weak var breedInfoContainerView: UIView!
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var representedBreed : MBTBreedCellModel? {
         didSet{
@@ -38,11 +40,10 @@ class MBTBreedDetailViewController: UIViewController {
     // MARK: - UI functionality
     func populateUI() {
         loadViewIfNeeded()
-        
         guard let breed = representedBreed else {
             return
         }
-        
+        showLoadingUI()
         navigationItem.title = breed.name
         getThumbnails(with: breed.id) { imgurls in
             var thumbnailsImageViews = [
@@ -70,7 +71,51 @@ class MBTBreedDetailViewController: UIViewController {
                     thumbnailsImageViews[j]?.removeFromSuperview()
                 }
             }
+            
+            self.hideLoadingUI()
         }
+    }
+    
+    func showLoadingUI() {
+        let thumbnailsImageViews = [
+            self.catThumbnail1ImageView,
+            self.catThumbnail2ImageView,
+            self.catThumbnail3ImageView,
+            self.catThumbnail4ImageView,
+            self.catThumbnail5ImageView,
+            self.catThumbnail6ImageView,
+            self.catThumbnail7ImageView,
+            self.catThumbnail8ImageView,
+            self.catThumbnail9ImageView
+        ]
+        
+        for thumb in thumbnailsImageViews {
+            thumb?.isHidden = true
+        }
+        breedInfoContainerView.isHidden = true
+        activityIndicatorView.isHidden = false
+        activityIndicatorView.startAnimating()
+    }
+    
+    func hideLoadingUI() {
+        let thumbnailsImageViews = [
+            self.catThumbnail1ImageView,
+            self.catThumbnail2ImageView,
+            self.catThumbnail3ImageView,
+            self.catThumbnail4ImageView,
+            self.catThumbnail5ImageView,
+            self.catThumbnail6ImageView,
+            self.catThumbnail7ImageView,
+            self.catThumbnail8ImageView,
+            self.catThumbnail9ImageView
+        ]
+        
+        for thumb in thumbnailsImageViews {
+            thumb?.isHidden = false
+        }
+        breedInfoContainerView.isHidden = false
+        activityIndicatorView.stopAnimating()
+        activityIndicatorView.isHidden = true
     }
     
     // MARK: - API request
