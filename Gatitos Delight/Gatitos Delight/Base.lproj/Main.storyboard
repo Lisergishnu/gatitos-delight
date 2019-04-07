@@ -18,9 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pyH-0F-BJT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="1eu-t2-6Mp">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pyH-0F-BJT">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
                                 <rect key="frame" x="16" y="134" width="343" height="355"/>
@@ -84,25 +86,33 @@
                             <constraint firstItem="svG-aD-0kZ" firstAttribute="height" secondItem="rPf-NC-tNv" secondAttribute="height" id="Rsr-sa-BaK"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="48Q-2F-Spu" secondAttribute="bottom" constant="20" id="YU9-cI-yHM"/>
                             <constraint firstItem="VEd-y9-xh8" firstAttribute="height" secondItem="48Q-2F-Spu" secondAttribute="height" id="Z7y-TS-gRa"/>
+                            <constraint firstItem="1eu-t2-6Mp" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="aH5-Ab-h58"/>
                             <constraint firstItem="pXw-3h-oQj" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="av4-UH-kEa"/>
                             <constraint firstItem="48Q-2F-Spu" firstAttribute="firstBaseline" secondItem="kxg-2I-0M7" secondAttribute="baseline" constant="20" id="bWR-in-0VN"/>
                             <constraint firstItem="kxg-2I-0M7" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="cbV-DT-duf"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="kxg-2I-0M7" secondAttribute="trailing" constant="16" id="fOS-6H-aOk"/>
+                            <constraint firstItem="pyH-0F-BJT" firstAttribute="centerY" secondItem="1eu-t2-6Mp" secondAttribute="centerY" id="fe8-Vr-dYm"/>
                             <constraint firstItem="rPf-NC-tNv" firstAttribute="centerY" secondItem="48Q-2F-Spu" secondAttribute="centerY" id="ihm-WX-HW9"/>
                             <constraint firstItem="VEd-y9-xh8" firstAttribute="width" secondItem="48Q-2F-Spu" secondAttribute="width" id="lX6-X1-gfT"/>
+                            <constraint firstItem="1eu-t2-6Mp" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ssR-fz-aWZ"/>
                             <constraint firstItem="svG-aD-0kZ" firstAttribute="centerY" secondItem="rPf-NC-tNv" secondAttribute="centerY" id="wQo-WO-BEJ"/>
+                            <constraint firstItem="pyH-0F-BJT" firstAttribute="centerX" secondItem="1eu-t2-6Mp" secondAttribute="centerX" id="xPT-mP-y2f"/>
                             <constraint firstItem="svG-aD-0kZ" firstAttribute="centerX" secondItem="rPf-NC-tNv" secondAttribute="centerX" id="yZ2-6a-vZF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cats" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="actionBannerImageView" destination="Ggx-YZ-BRY" id="ki3-bS-3BM"/>
                         <outlet property="activityIndicator" destination="pyH-0F-BJT" id="qjf-mj-g5u"/>
                         <outlet property="bannerImageView" destination="pXw-3h-oQj" id="1A9-xn-tyi"/>
                         <outlet property="breedButton" destination="brS-bu-dJT" id="dxm-0T-cpC"/>
                         <outlet property="catImageView" destination="kxg-2I-0M7" id="50y-II-fSd"/>
                         <outlet property="downvoteButton" destination="VEd-y9-xh8" id="uqi-aM-XTy"/>
+                        <outlet property="downvoteImageView" destination="48Q-2F-Spu" id="Iie-D0-bcV"/>
+                        <outlet property="loadingBackgroundImageView" destination="1eu-t2-6Mp" id="hwk-VA-We5"/>
                         <outlet property="upvoteButton" destination="svG-aD-0kZ" id="gK6-gD-SiJ"/>
+                        <outlet property="upvoteImageView" destination="rPf-NC-tNv" id="dsb-Eo-KOQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -468,6 +478,7 @@
     </scenes>
     <resources>
         <image name="BreedsTabIcon" width="30" height="30"/>
+        <image name="LoadingBackground" width="100" height="100"/>
         <image name="NayButton" width="114" height="89"/>
         <image name="RateThisCatBanner" width="196" height="29"/>
         <image name="YayButton" width="114" height="89"/>

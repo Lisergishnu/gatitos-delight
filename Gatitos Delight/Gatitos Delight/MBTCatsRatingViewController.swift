@@ -20,6 +20,10 @@ class MBTCatsRatingViewController: UIViewController {
     @IBOutlet weak var upvoteButton: UIButton!
     @IBOutlet weak var downvoteButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingBackgroundImageView: UIImageView!
+    @IBOutlet weak var actionBannerImageView: UIImageView!
+    @IBOutlet weak var upvoteImageView: UIImageView!
+    @IBOutlet weak var downvoteImageView: UIImageView!
     
     // The label of setCat notifications
     static let SetCat = Notification.Name("setCat")
@@ -161,6 +165,11 @@ class MBTCatsRatingViewController: UIViewController {
         breedButton.isHidden = true
         upvoteButton.isHidden = true
         downvoteButton.isHidden = true
+        upvoteImageView.isHidden = true
+        downvoteImageView.isHidden = true
+        actionBannerImageView.isHidden = true
+        
+        loadingBackgroundImageView.isHidden = false
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
@@ -170,6 +179,11 @@ class MBTCatsRatingViewController: UIViewController {
         breedButton.isHidden = false
         upvoteButton.isHidden = false
         downvoteButton.isHidden = false
+        upvoteImageView.isHidden = false
+        downvoteImageView.isHidden = false
+        actionBannerImageView.isHidden = false
+        
+        loadingBackgroundImageView.isHidden = true
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
     }
