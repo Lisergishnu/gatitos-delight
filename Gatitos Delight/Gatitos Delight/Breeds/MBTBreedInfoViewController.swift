@@ -8,6 +8,7 @@
 
 import UIKit
 
+// A view controller for displaying breed details.
 class MBTBreedInfoViewController: UIViewController {
 
     @IBOutlet weak var breedNameLabel: UILabel!
@@ -17,19 +18,20 @@ class MBTBreedInfoViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var lifeSpanLabel: UILabel!
     
+    /// The represented breed shown in the view. Setting this will refresh the UI.
     var representedBreed : MBTBreedModel? {
         didSet {
             populateUI()
         }
     }
     
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - UI functionality
+    /// Refreshes the UI of the controlled view with the represented breed data.
     func populateUI() {
         loadViewIfNeeded()
         guard let breed = representedBreed else {
@@ -43,15 +45,4 @@ class MBTBreedInfoViewController: UIViewController {
         weightLabel.text = breed.weight + " kgs"
         lifeSpanLabel.text = breed.lifeSpan + " average life span"
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
