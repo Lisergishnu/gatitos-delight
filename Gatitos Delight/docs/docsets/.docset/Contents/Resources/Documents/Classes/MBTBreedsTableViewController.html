@@ -14,7 +14,7 @@
     <a title="MBTBreedsTableViewController Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (20% documented)</p>
+        <p><a href="../index.html"> Docs</a> (45% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -79,7 +79,7 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>A view controller that lists the whole list of breeds from the Cat API.</p>
 
           </section>
           <section class="section task-group-section">
@@ -98,7 +98,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Array containing all the breed descriptions returned by the service.</p>
 
                       </div>
                       <div class="declaration">
@@ -125,7 +125,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Notification name for setting the breed on the table.</p>
+
+<p>When recieved, the view controller will load the recieved breed name in the detail view. An example of how to emit the event:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">MBTBreedsTableViewController</span><span class="o">.</span><span class="kt">BreedNameKey</span><span class="p">:</span><span class="s">"Breed Name"</span><span class="p">]</span>
+<span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">MBTBreedsTableViewController</span><span class="o">.</span><span class="kt">SetBreed</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="n">userInfo</span><span class="p">)</span>
+</code></pre>
 
                       </div>
                       <div class="declaration">
@@ -152,7 +157,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Constant string for identifing the breed name data when passing a SetBreed notification.</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    MBTCatsRatingViewController.SetCat
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -217,7 +227,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Fills the internal array with breed data from the Cat API.</p>
 
                       </div>
                       <div class="declaration">
@@ -244,7 +254,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Selects a breed from the table based on its name.</p>
 
                       </div>
                       <div class="declaration">
@@ -254,6 +264,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">selectBreed</span><span class="p">(</span><span class="n">with</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Name of the breed as returned by the Cat API.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -412,7 +441,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Objective-C compilant function that is binded to the NotificationCenter with the SetBreed Notification.</p>
 
                       </div>
                       <div class="declaration">
@@ -423,6 +452,25 @@
 <span class="kd">func</span> <span class="nf">setBreed</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>notification</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Notification recieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

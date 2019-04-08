@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A view controller used in the About tab.
 class MBTAboutViewController: UIViewController {
 
     // MARK: - UIViewController
