@@ -42,4 +42,3 @@ Without time constrains there are things that I would like to do on this app,
 - **Cat API thumbnails**: I tried using the thumbnail query to get lighter images but it didn't seem to work. If this issue were not to be resolved soon a solution would be developing a middle-of-the-road server which could pull the images and scale them. I noticed that this is the biggest slowdown.
 - **Network time out UI**: Since we are working with an API, network timeouts are possible. Currently the app. retries a request automatically, but it would be nice to have a better UI to let the user know why is taking so long.
 - **Refactor network code**: When finished I noticed that the network code can be refactored into a better solution, so view controllers won't have to perform requests directly anymore.
-
