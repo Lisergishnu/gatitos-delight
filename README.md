@@ -1,5 +1,5 @@
 <p align="center">
-<img src="icon.png" />
+<img src="https://raw.githubusercontent.com/Lisergishnu/gatitos-delight/master/Icon.png?token=AGXnInogUGrtO_dq2x4HbtQfpNKM_IJ_ks5cqxRwwA%3D%3D" />
 </p>
 
 <h1 align="center">Gatitos Delight (Kitty delight)</h1>
