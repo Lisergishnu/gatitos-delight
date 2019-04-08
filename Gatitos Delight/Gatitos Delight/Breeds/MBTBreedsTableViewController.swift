@@ -28,6 +28,8 @@ class MBTBreedsTableViewController: UITableViewController {
     /// - SeeAlso: MBTCatsRatingViewController.SetCat
     static let BreedNameKey: String = "breedName"
     
+    /// If set means there is a detail controller on the stack.
+    private var detailController: MBTBreedDetailViewController?
     
     /// MARK: - UIViewController
     override func viewDidLoad() {
@@ -88,6 +90,10 @@ class MBTBreedsTableViewController: UITableViewController {
     func findNameAndPerformSegue(_ name: String) {
         if let selectedBreedIndex = breedCells.firstIndex(where: {$0.name == name}) {
             tableView.selectRow(at: IndexPath(row: selectedBreedIndex, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.none)
+            if let controller = detailController {
+                controller.performSegue(withIdentifier: "unwindBreedDetail", sender: nil)
+                detailController = nil
+            }
             performSegue(withIdentifier: "showBreedDetail", sender: self)
         } else {
             debugPrint("Couldn't find breed \(name)")
@@ -134,10 +140,16 @@ class MBTBreedsTableViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let breed = breedCells[indexPath.row]
                 let controller = segue.destination as! MBTBreedDetailViewController
-                
+                detailController = controller
                 controller.representedBreed = breed
             }
         }
+    }
+    
+    /// Empty function to bind the unwind segue in the Storyboard.
+    ///
+    /// - Parameter segue: Unwind segue.
+    @IBAction func unwindBreedDetailView(segue: UIStoryboardSegue) {
     }
     
     // MARK: - Notification handling
