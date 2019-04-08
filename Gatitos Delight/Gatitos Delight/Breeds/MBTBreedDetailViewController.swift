@@ -20,22 +20,21 @@ struct MBTBreedImageModel {
 /// A view controller for showing the breed details with some example images.
 class MBTBreedDetailViewController: UIViewController {
 
-    @IBOutlet weak var catThumbnail1ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail2ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail3ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail4ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail5ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail6ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail7ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail8ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail9ImageView: UIImageView!
-    @IBOutlet weak var breedInfoContainerView: UIView!
+    @IBOutlet private weak var catThumbnail1ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail2ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail3ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail4ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail5ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail6ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail7ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail8ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail9ImageView: UIImageView!
+    @IBOutlet private weak var breedInfoContainerView: UIView!
+    
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
     /// Reference to the embedded breed info view controller.
-    var breedInfoViewController: MBTBreedInfoViewController?
-    
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    
+    var breedInfoViewController: MBTBreedInfoViewController?    
     
     /// Constant string for identifing the imageID data when passing a SetCat notification.
     /// - SeeAlso: MBTCatsRatingViewController.SetCat

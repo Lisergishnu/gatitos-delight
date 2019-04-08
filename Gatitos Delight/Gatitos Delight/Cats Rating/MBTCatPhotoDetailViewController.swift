@@ -19,10 +19,10 @@ class MBTCatPhotoDetailViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var photoDetailImageView: UIImageView!
-    @IBOutlet weak var photoDetailHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var photoDetailWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var photoDetailScrollView: UIScrollView!
+    @IBOutlet private weak var photoDetailImageView: UIImageView!
+    @IBOutlet private weak var photoDetailHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var photoDetailWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var photoDetailScrollView: UIScrollView!
     
     // MARK: - UIViewController
     override func viewDidLoad() {

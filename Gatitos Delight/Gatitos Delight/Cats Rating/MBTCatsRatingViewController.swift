@@ -15,16 +15,16 @@ import Kingfisher
 /// A view controller that lets the user to see and vote cats.
 class MBTCatsRatingViewController: UIViewController {
     
-    @IBOutlet weak var bannerImageView: UIImageView!
-    @IBOutlet weak var catImageView: UIImageView!
-    @IBOutlet weak var breedButton: UIButton!
-    @IBOutlet weak var upvoteButton: UIButton!
-    @IBOutlet weak var downvoteButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var loadingBackgroundImageView: UIImageView!
-    @IBOutlet weak var actionBannerImageView: UIImageView!
-    @IBOutlet weak var upvoteImageView: UIImageView!
-    @IBOutlet weak var downvoteImageView: UIImageView!
+    @IBOutlet private weak var bannerImageView: UIImageView!
+    @IBOutlet private weak var catImageView: UIImageView!
+    @IBOutlet private weak var breedButton: UIButton!
+    @IBOutlet private weak var upvoteButton: UIButton!
+    @IBOutlet private weak var downvoteButton: UIButton!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingBackgroundImageView: UIImageView!
+    @IBOutlet private weak var actionBannerImageView: UIImageView!
+    @IBOutlet private weak var upvoteImageView: UIImageView!
+    @IBOutlet private weak var downvoteImageView: UIImageView!
     
     /// Notification name for setting the cat shown in the UI.
     ///

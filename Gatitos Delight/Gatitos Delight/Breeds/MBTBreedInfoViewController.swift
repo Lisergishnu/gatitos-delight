@@ -11,12 +11,12 @@ import UIKit
 // A view controller for displaying breed details.
 class MBTBreedInfoViewController: UIViewController {
 
-    @IBOutlet weak var breedNameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var temperamentLabel: UILabel!
-    @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
-    @IBOutlet weak var lifeSpanLabel: UILabel!
+    @IBOutlet private weak var breedNameLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var temperamentLabel: UILabel!
+    @IBOutlet private weak var countryLabel: UILabel!
+    @IBOutlet private weak var weightLabel: UILabel!
+    @IBOutlet private weak var lifeSpanLabel: UILabel!
     
     /// The represented breed shown in the view. Setting this will refresh the UI.
     var representedBreed : MBTBreedModel? {

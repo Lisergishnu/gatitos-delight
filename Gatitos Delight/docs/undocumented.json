@@ -16,42 +16,42 @@
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/AppDelegate.swift",
-      "line": 17,
+      "line": 16,
       "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/AppDelegate.swift",
-      "line": 22,
+      "line": 21,
       "symbol": "AppDelegate.applicationWillResignActive(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/AppDelegate.swift",
-      "line": 27,
+      "line": 26,
       "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/AppDelegate.swift",
-      "line": 32,
+      "line": 31,
       "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/AppDelegate.swift",
-      "line": 36,
+      "line": 35,
       "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/AppDelegate.swift",
-      "line": 40,
+      "line": 39,
       "symbol": "AppDelegate.applicationWillTerminate(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -79,91 +79,14 @@
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 23,
-      "symbol": "MBTBreedDetailViewController.catThumbnail1ImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 24,
-      "symbol": "MBTBreedDetailViewController.catThumbnail2ImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 25,
-      "symbol": "MBTBreedDetailViewController.catThumbnail3ImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 26,
-      "symbol": "MBTBreedDetailViewController.catThumbnail4ImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 27,
-      "symbol": "MBTBreedDetailViewController.catThumbnail5ImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 28,
-      "symbol": "MBTBreedDetailViewController.catThumbnail6ImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 29,
-      "symbol": "MBTBreedDetailViewController.catThumbnail7ImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 30,
-      "symbol": "MBTBreedDetailViewController.catThumbnail8ImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 31,
-      "symbol": "MBTBreedDetailViewController.catThumbnail9ImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 32,
-      "symbol": "MBTBreedDetailViewController.breedInfoContainerView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 37,
-      "symbol": "MBTBreedDetailViewController.activityIndicatorView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 52,
+      "line": 51,
       "symbol": "MBTBreedDetailViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedDetailViewController.swift",
-      "line": 215,
+      "line": 214,
       "symbol": "MBTBreedDetailViewController.prepare(for:sender:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -173,48 +96,6 @@
       "line": 12,
       "symbol": "MBTBreedInfoViewController",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedInfoViewController.swift",
-      "line": 14,
-      "symbol": "MBTBreedInfoViewController.breedNameLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedInfoViewController.swift",
-      "line": 15,
-      "symbol": "MBTBreedInfoViewController.descriptionLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedInfoViewController.swift",
-      "line": 16,
-      "symbol": "MBTBreedInfoViewController.temperamentLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedInfoViewController.swift",
-      "line": 17,
-      "symbol": "MBTBreedInfoViewController.countryLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedInfoViewController.swift",
-      "line": 18,
-      "symbol": "MBTBreedInfoViewController.weightLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Breeds/MBTBreedInfoViewController.swift",
-      "line": 19,
-      "symbol": "MBTBreedInfoViewController.lifeSpanLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -261,34 +142,6 @@
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatPhotoDetailViewController.swift",
-      "line": 22,
-      "symbol": "MBTCatPhotoDetailViewController.photoDetailImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatPhotoDetailViewController.swift",
-      "line": 23,
-      "symbol": "MBTCatPhotoDetailViewController.photoDetailHeightConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatPhotoDetailViewController.swift",
-      "line": 24,
-      "symbol": "MBTCatPhotoDetailViewController.photoDetailWidthConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatPhotoDetailViewController.swift",
-      "line": 25,
-      "symbol": "MBTCatPhotoDetailViewController.photoDetailScrollView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatPhotoDetailViewController.swift",
       "line": 28,
       "symbol": "MBTCatPhotoDetailViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
@@ -310,76 +163,6 @@
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 18,
-      "symbol": "MBTCatsRatingViewController.bannerImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 19,
-      "symbol": "MBTCatsRatingViewController.catImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 20,
-      "symbol": "MBTCatsRatingViewController.breedButton",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 21,
-      "symbol": "MBTCatsRatingViewController.upvoteButton",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 22,
-      "symbol": "MBTCatsRatingViewController.downvoteButton",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 23,
-      "symbol": "MBTCatsRatingViewController.activityIndicator",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 24,
-      "symbol": "MBTCatsRatingViewController.loadingBackgroundImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 25,
-      "symbol": "MBTCatsRatingViewController.actionBannerImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 26,
-      "symbol": "MBTCatsRatingViewController.upvoteImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
-      "line": 27,
-      "symbol": "MBTCatsRatingViewController.downvoteImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/Cats Rating/MBTCatsRatingViewController.swift",
       "line": 42,
       "symbol": "MBTCatsRatingViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
@@ -394,14 +177,7 @@
     },
     {
       "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/MBTAboutViewController.swift",
-      "line": 11,
-      "symbol": "MBTAboutViewController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mbenzit/Code/gatitos-delight/Gatitos Delight/Gatitos Delight/MBTAboutViewController.swift",
-      "line": 14,
+      "line": 15,
       "symbol": "MBTAboutViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
