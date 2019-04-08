@@ -298,6 +298,7 @@ class MBTCatsRatingViewController: UIViewController {
         guard let id = notification.userInfo?[MBTBreedDetailViewController.ImageIDKey] as? String else{
             return
         }
+        loadViewIfNeeded()
         showLoadingUI()
         askForCat(with: id) {
             self.hideLoadingUI()

@@ -15,7 +15,7 @@ import Alamofire_SwiftyJSON
 class MBTBreedsTableViewController: UITableViewController {
 
     /// Array containing all the breed descriptions returned by the service.
-    var breedCells: [MBTCatAPIBreedModel] = []
+    private var breedCells: [MBTCatAPIBreedModel] = []
     
     /// Notification name for setting the breed on the table.
     ///
@@ -28,58 +28,85 @@ class MBTBreedsTableViewController: UITableViewController {
     /// - SeeAlso: MBTCatsRatingViewController.SetCat
     static let BreedNameKey: String = "breedName"
     
+    
+    /// MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(setBreed(notification:)), name: MBTBreedsTableViewController.SetBreed, object: nil)
         
-        populateArrayOfBreeds()
+        askForBreedList() { json in
+            self.populateArrayOfBreeds(json)
+        }
     }
     
-    
     // MARK: - Data Managment
-    
     /// Fills the internal array with breed data from the Cat API.
-    func populateArrayOfBreeds() {
-        Alamofire.request("https://api.thecatapi.com/v1/breeds", headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
-            guard let responseValue = response.result.value else {
-                debugPrint("Couldn't get a proper API response.")
-                return
+    ///
+    /// - Parameter responseValue: JSON response from the Cat API.
+    func populateArrayOfBreeds(_ responseValue: JSON) {
+        for (_,breed):(String, JSON) in JSON(responseValue) {
+            guard let id = breed["id"].string,
+                let name = breed["name"].string,
+                let country = breed["origin"].string,
+                let lifeSpan = breed["life_span"].string,
+                let temperament = breed["temperament"].string,
+                let description = breed["description"].string,
+                let weight = breed["weight"]["metric"].string else {
+                    continue
             }
-            
-            for (_,breed):(String, JSON) in JSON(responseValue) {
-                guard let id = breed["id"].string,
-                    let name = breed["name"].string,
-                    let country = breed["origin"].string,
-                    let lifeSpan = breed["life_span"].string,
-                    let temperament = breed["temperament"].string,
-                    let description = breed["description"].string,
-                    let weight = breed["weight"]["metric"].string else {
-                        continue
-                }
-                let b = MBTCatAPIBreedModel(id: id,
-                                          name: name,
-                                          country: country,
-                                          lifeSpan: lifeSpan,
-                                          temperament: temperament,
-                                          description: description,
-                                          weight: weight)
-                self.breedCells.append(b)
-            }
-            
-            self.tableView.reloadData()
+            let b = MBTCatAPIBreedModel(id: id,
+                                        name: name,
+                                        country: country,
+                                        lifeSpan: lifeSpan,
+                                        temperament: temperament,
+                                        description: description,
+                                        weight: weight)
+            self.breedCells.append(b)
         }
+        
+        self.tableView.reloadData()
     }
     
     /// Selects a breed from the table based on its name.
     ///
     /// - Parameter name: Name of the breed as returned by the Cat API.
     func selectBreed(with name:String) {
-        loadViewIfNeeded()
+        if breedCells.isEmpty {
+            askForBreedList() { json in
+                self.populateArrayOfBreeds(json)
+                self.findNameAndPerformSegue(name)
+            }
+        } else {
+            findNameAndPerformSegue(name)
+        }
+    }
+    
+    /// Finds name in breed list, selects it in the table and then performs a segue.
+    ///
+    /// - Parameter name: Name of the breed as returned by the Cat API.
+    func findNameAndPerformSegue(_ name: String) {
         if let selectedBreedIndex = breedCells.firstIndex(where: {$0.name == name}) {
             tableView.selectRow(at: IndexPath(row: selectedBreedIndex, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.none)
+            performSegue(withIdentifier: "showBreedDetail", sender: self)
         } else {
             debugPrint("Couldn't find breed \(name)")
+        }
+    }
+    
+    // MARK: - Cat API functionality
+    
+    /// Queries the Cat API for the breed list.
+    ///
+    /// - Parameter completion: Closure capturing the JSON response from the API. Called upon request success.
+    func askForBreedList(completion: ((JSON)->())? = nil) {
+        Alamofire.request("https://api.thecatapi.com/v1/breeds", headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
+            guard let responseValue = response.result.value else {
+                debugPrint("Couldn't get a proper API response.")
+                return
+            }
+            
+            completion?(responseValue)
         }
     }
     
