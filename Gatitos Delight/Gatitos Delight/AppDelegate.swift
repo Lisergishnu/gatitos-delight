@@ -15,6 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        guard let tabBarController = window?.rootViewController as? UITabBarController else {
+            return false
+        }
+        guard let navigationController = tabBarController.viewControllers?[1] as? UINavigationController else {
+            return false
+        }
+        guard let tableController = navigationController.topViewController as? MBTBreedsTableViewController else {
+            return false
+        }
+    
+        tableController.loadViewIfNeeded()
         return true
     }
 

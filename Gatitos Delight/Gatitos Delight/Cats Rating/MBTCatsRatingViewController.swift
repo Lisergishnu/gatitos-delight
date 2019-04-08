@@ -260,6 +260,7 @@ class MBTCatsRatingViewController: UIViewController {
         guard let name = breedButton.titleLabel?.text else {
             return
         }
+
         let userInfo: [String:String] = [MBTBreedsTableViewController.BreedNameKey:name]
         NotificationCenter.default.post(name: MBTBreedsTableViewController.SetBreed, object: nil, userInfo: userInfo)
         tabBarController?.selectedIndex = 1
