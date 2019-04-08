@@ -17,36 +17,43 @@ struct MBTBreedImageModel {
     var imageID: String
 }
 
+/// A view controller for showing the breed details with some example images.
 class MBTBreedDetailViewController: UIViewController {
 
-    @IBOutlet weak var catThumbnail1ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail2ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail3ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail4ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail5ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail6ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail7ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail8ImageView: UIImageView!
-    @IBOutlet weak var catThumbnail9ImageView: UIImageView!
-    @IBOutlet weak var breedInfoContainerView: UIView!
+    @IBOutlet private weak var catThumbnail1ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail2ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail3ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail4ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail5ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail6ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail7ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail8ImageView: UIImageView!
+    @IBOutlet private weak var catThumbnail9ImageView: UIImageView!
+    @IBOutlet private weak var breedInfoContainerView: UIView!
     
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    /// Reference to the embedded breed info view controller.
     var breedInfoViewController: MBTBreedInfoViewController?
     
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    
+    /// Constant string for identifing the imageID data when passing a SetCat notification.
+    /// - SeeAlso: MBTCatsRatingViewController.SetCat
     static let ImageIDKey: String = "imageID"
     
-    var representedBreed : MBTBreedModel? {
+    /// The represented breed shown in the view. Setting this will refresh the UI.
+    var representedBreed : MBTCatAPIBreedModel? {
         didSet{
             populateUI()
         }
     }
     
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     // MARK: - UI functionality
+    /// Refreshes the UI of the controlled view with the represented breed data.
     func populateUI() {
         loadViewIfNeeded()
         guard let breed = representedBreed else {
@@ -102,6 +109,7 @@ class MBTBreedDetailViewController: UIViewController {
         }
     }
     
+    /// Shows an spinning activity indicator, hiding all the rest of the UI.
     func showLoadingUI() {
         let thumbnailsImageViews = [
             self.catThumbnail1ImageView,
@@ -123,6 +131,7 @@ class MBTBreedDetailViewController: UIViewController {
         activityIndicatorView.startAnimating()
     }
     
+    /// Hides the spinning activity indicator, showing the informational UI.
     func hideLoadingUI() {
         let thumbnailsImageViews = [
             self.catThumbnail1ImageView,
@@ -144,6 +153,10 @@ class MBTBreedDetailViewController: UIViewController {
         activityIndicatorView.isHidden = true
     }
     
+    /// Objective-C compilant function that listens when the user taps one of the thumbnails.
+    ///
+    /// - Note: This function uses the UIImageView accesibilityIdentifier property to retrieve the image ID.
+    /// - Parameter tapGestureRecognizer: The sender of the event.
     @objc func breedImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let imageView = tapGestureRecognizer.view as! UIImageView
         guard let imageID = imageView.accessibilityIdentifier else {
@@ -153,6 +166,13 @@ class MBTBreedDetailViewController: UIViewController {
     }
     
     // MARK: - API request
+    
+    /// Performs an Cat API request for 9 or less cat images.
+    ///
+    /// - Parameters:
+    ///   - breedID: Cat API breed ID to search.
+    ///   - completion: Closure capturing an array of MBTBreedImageModel with the URLs of the images. Called upon request success.
+    /// - SeeAlso: MBTBreedImageModel
     func getThumbnails(with breedID:String, completion: (([MBTBreedImageModel])->())? = nil) {
         let body: Parameters = [
             "mime_types": "jpg,png",
@@ -197,6 +217,10 @@ class MBTBreedDetailViewController: UIViewController {
         }
     }
     
+    
+    /// Switches to the Cats tab and shows an specific image there.
+    ///
+    /// - Parameter imageID: Cat API image ID to show in the Cats tab.
     func goToCatRating(with imageID:String){
         debugPrint(imageID)
         // Using the notification center to keep things decoupled

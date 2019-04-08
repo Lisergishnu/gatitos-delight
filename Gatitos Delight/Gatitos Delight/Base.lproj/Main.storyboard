@@ -24,8 +24,9 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pyH-0F-BJT">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-2I-0M7">
                                 <rect key="frame" x="16" y="89" width="343" height="400"/>
+                                <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="0.046322408536585369" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="lNZ-t4-GGs" appends="YES" id="Hvf-Aq-uxa"/>
@@ -389,9 +390,11 @@
                         <outlet property="catThumbnail7ImageView" destination="6IO-F5-Tqi" id="jXk-TV-coh"/>
                         <outlet property="catThumbnail8ImageView" destination="BVc-3p-QH9" id="69d-fV-Tmt"/>
                         <outlet property="catThumbnail9ImageView" destination="XtD-du-bwa" id="ftZ-YD-WSu"/>
+                        <segue destination="NlW-f7-MYI" kind="unwind" identifier="unwindBreedDetail" unwindAction="unwindBreedDetailViewWithSegue:" id="pjp-Go-HuO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvy-Tk-GIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NlW-f7-MYI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2380" y="372.86356821589209"/>
         </scene>

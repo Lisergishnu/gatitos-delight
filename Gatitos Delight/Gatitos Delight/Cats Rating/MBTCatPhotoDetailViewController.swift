@@ -9,26 +9,39 @@
 import UIKit
 import Kingfisher
 
+/// A view controller that allows the user to scroll and zoom an image.
 class MBTCatPhotoDetailViewController: UIViewController {
 
+    /// Represented photo in the view.
     var photoURL: URL? {
         didSet {
             populateUI()
         }
     }
     
-    @IBOutlet weak var photoDetailImageView: UIImageView!
-    @IBOutlet weak var photoDetailHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var photoDetailWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var photoDetailScrollView: UIScrollView!
+    @IBOutlet private weak var photoDetailImageView: UIImageView!
+    @IBOutlet private weak var photoDetailHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var photoDetailWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var photoDetailScrollView: UIScrollView!
     
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        // The min scale calculation helps provide pinch functionality, while keeping the image always fitted to the width or height of the screen.
+        let widthScale = view.bounds.width / photoDetailImageView.bounds.width
+        let heightScale = view.bounds.height / photoDetailImageView.bounds.height
+        let minScale = min(widthScale,heightScale)
+        photoDetailScrollView.minimumZoomScale = minScale
+        photoDetailScrollView.zoomScale = minScale
     }
     
     // MARK: - UI functionality
+    /// Refreshes the UI of the controlled view with the represented image URL.
     func populateUI() {
         loadViewIfNeeded()
         guard let url = photoURL else {
@@ -47,19 +60,9 @@ class MBTCatPhotoDetailViewController: UIViewController {
             }
         }
     }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        // Minimum scale so the image appears whole on the screen
-        let widthScale = view.bounds.width / photoDetailImageView.bounds.width
-        let heightScale = view.bounds.height / photoDetailImageView.bounds.height
-        let minScale = min(widthScale,heightScale)
-        photoDetailScrollView.minimumZoomScale = minScale
-        photoDetailScrollView.zoomScale = minScale
-    }
 }
 
+// MARK: - UIScrollViewDelegate
 extension MBTCatPhotoDetailViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return photoDetailImageView

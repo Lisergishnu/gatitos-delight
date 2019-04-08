@@ -12,25 +12,31 @@ import SwiftyJSON
 import Alamofire_SwiftyJSON
 import Kingfisher
 
+/// A view controller that lets the user to see and vote cats.
 class MBTCatsRatingViewController: UIViewController {
     
-    @IBOutlet weak var bannerImageView: UIImageView!
-    @IBOutlet weak var catImageView: UIImageView!
-    @IBOutlet weak var breedButton: UIButton!
-    @IBOutlet weak var upvoteButton: UIButton!
-    @IBOutlet weak var downvoteButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var loadingBackgroundImageView: UIImageView!
-    @IBOutlet weak var actionBannerImageView: UIImageView!
-    @IBOutlet weak var upvoteImageView: UIImageView!
-    @IBOutlet weak var downvoteImageView: UIImageView!
+    @IBOutlet private weak var bannerImageView: UIImageView!
+    @IBOutlet private weak var catImageView: UIImageView!
+    @IBOutlet private weak var breedButton: UIButton!
+    @IBOutlet private weak var upvoteButton: UIButton!
+    @IBOutlet private weak var downvoteButton: UIButton!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingBackgroundImageView: UIImageView!
+    @IBOutlet private weak var actionBannerImageView: UIImageView!
+    @IBOutlet private weak var upvoteImageView: UIImageView!
+    @IBOutlet private weak var downvoteImageView: UIImageView!
     
-    // The label of setCat notifications
+    /// Notification name for setting the cat shown in the UI.
+    ///
+    /// When recieved, the view controller will load the cat's image, and set the reference accordingly so the next vote emited will go for that image. An example of how to emit the event:
+    ///
+    ///     let userInfo: [String: String] = [MBTBreedDetailViewController.ImageIDKey:imageID]
+    ///     NotificationCenter.default.post(name: MBTCatsRatingViewController.SetCat, object: nil, userInfo: userInfo)
     static let SetCat = Notification.Name("setCat")
     
     // These variables are set everytime fillUI is called
-    var currentCatID: String?
-    var currentCatURL: URL?
+    private var currentCatID: String?
+    private var currentCatURL: URL?
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -45,6 +51,10 @@ class MBTCatsRatingViewController: UIViewController {
     }
 
     // MARK: - Cat API functionality
+    
+    /// Queries the Cat API for a random cat.
+    ///
+    /// - Parameter completion: Closure capturing a JSON object with the service response. Called upon request success.
     func askForRandomCat(completion: (()->())? = nil) {
         Alamofire.request("https://api.thecatapi.com/v1/images/search", headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
             guard let responseValue = response.result.value?[0] else {
@@ -57,6 +67,11 @@ class MBTCatsRatingViewController: UIViewController {
         }
     }
     
+    /// Queries the Cat API for a cat that matches the image ID.
+    ///
+    /// - Parameters:
+    ///   - imageID: Desired image ID as given by the Cat API.
+    ///   - completion: Closure capturing a JSON object with the service response. Called upon request success.
     func askForCat(with imageID:String, completion: (()->())? = nil) {
         Alamofire.request("https://api.thecatapi.com/v1/images/"+imageID, headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
             guard let responseValue = response.result.value else {
@@ -69,6 +84,12 @@ class MBTCatsRatingViewController: UIViewController {
         }
     }
     
+    /// Emits a vote for the image ID specified.
+    ///
+    /// - Parameters:
+    ///   - id: Image ID as given by the Cat API.
+    ///   - value: 0 for downvote, 1 for upvote.
+    ///   - completion: Closure capturing a JSON object with the service response. Called upon request success.
     func emitVote(with id:String, value:Int, completion: (()->())? = nil) {
         let voteBody : Parameters = [
             "image_id" : id,
@@ -91,6 +112,12 @@ class MBTCatsRatingViewController: UIViewController {
     }
 
     // MARK: - Voting handlers
+    
+    /// Upvotes the current cat.
+    ///
+    /// Plays an animation to show the user that a vote was casted. Upon success of the request, a new random cat request is made.
+    ///
+    /// - Parameter sender: Sender of the action.
     @IBAction func upvoteCurrentCat(_ sender: Any) {
         guard let id = currentCatID else {
             return
@@ -104,6 +131,11 @@ class MBTCatsRatingViewController: UIViewController {
         self.startBannerAnimation(with: UIImage(named: "YayBanner")!)
     }
     
+    /// Downvotes the current cat.
+    ///
+    /// Plays an animation to show the user that a vote was casted. Upon success of the request, a new random cat request is made.
+    ///
+    /// - Parameter sender: Sender of the action.
     @IBAction func downvoteCurrentCat(_ sender: Any) {
         guard let id = currentCatID else {
             return
@@ -119,6 +151,12 @@ class MBTCatsRatingViewController: UIViewController {
     }
     
     // MARK: - UI Helper functions
+    
+    /// Fills the UI with the JSON response data.
+    ///
+    /// - Parameters:
+    ///   - catInfoResponse: JSON containing the cat data from as given from the Cat API.
+    ///   - completion: Closure called upon success.
     func fillUI(catInfoResponse: JSON, completion: (()->())? = nil) {
         debugPrint(catInfoResponse)
         if let breedName = catInfoResponse["breeds"][0]["name"].string  {
@@ -164,6 +202,9 @@ class MBTCatsRatingViewController: UIViewController {
         }
     }
     
+    /// Plays a fade-in and fade-out animation in the upper position of the screen.
+    ///
+    /// - Parameter image: Image to show with the animation.
     func startBannerAnimation(with image:UIImage) {
         self.bannerImageView.alpha = 0
         bannerImageView.image = image
@@ -178,6 +219,7 @@ class MBTCatsRatingViewController: UIViewController {
                 })
     }
     
+    /// Shows an spinning activity indicator, hiding all the rest of the UI.
     func showLoadingUI() {
         catImageView.isHidden = true
         breedButton.isHidden = true
@@ -192,6 +234,7 @@ class MBTCatsRatingViewController: UIViewController {
         activityIndicator.startAnimating()
     }
     
+    /// Hides the spinning activity indicator, showing the informational UI.
     func hideLoadingUI() {
         catImageView.isHidden = false
         if breedButton.currentTitle != "" {
@@ -209,15 +252,24 @@ class MBTCatsRatingViewController: UIViewController {
     }
     
     // MARK: - Transitions
+    
+    /// Switches to the Breeds tab and shows the detail of the breed based on the label of the emiting button.
+    ///
+    /// - Parameter sender: Sender of the action.
     @IBAction func goToBreed(_ sender: Any) {
         guard let name = breedButton.titleLabel?.text else {
             return
         }
+
         let userInfo: [String:String] = [MBTBreedsTableViewController.BreedNameKey:name]
         NotificationCenter.default.post(name: MBTBreedsTableViewController.SetBreed, object: nil, userInfo: userInfo)
         tabBarController?.selectedIndex = 1
     }
     
+    
+    /// Shows the current image in the photo detail view.
+    ///
+    /// - Parameter sender: Sender of the action.
     @IBAction func openDetail(_ sender: Any) {
         performSegue(withIdentifier: "zoom", sender: nil)
     }
@@ -232,14 +284,22 @@ class MBTCatsRatingViewController: UIViewController {
         }
     }
     
+    /// Empty function to bind the unwind segue in the Storyboard.
+    ///
+    /// - Parameter segue: Unwind segue.
     @IBAction func unwindDetailView(segue: UIStoryboardSegue) {
     }
     
     // MARK: - Notification handling
+    
+    /// Objective-C compilant function that is binded to the NotificationCenter with the SetCat Notification.
+    ///
+    /// - Parameter notification: Notification recieved.
     @objc func setCat(notification: NSNotification) {
         guard let id = notification.userInfo?[MBTBreedDetailViewController.ImageIDKey] as? String else{
             return
         }
+        loadViewIfNeeded()
         showLoadingUI()
         askForCat(with: id) {
             self.hideLoadingUI()
