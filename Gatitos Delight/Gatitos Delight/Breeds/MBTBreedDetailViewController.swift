@@ -172,7 +172,7 @@ class MBTBreedDetailViewController: UIViewController {
     ///
     /// - Parameters:
     ///   - breedID: Cat API breed ID to search.
-    ///   - completion: Closure capturing an array of MBTBreedImageModel with the URLs of the images.
+    ///   - completion: Closure capturing an array of MBTBreedImageModel with the URLs of the images. Called upon request success.
     /// - SeeAlso: MBTBreedImageModel
     func getThumbnails(with breedID:String, completion: (([MBTBreedImageModel])->())? = nil) {
         let body: Parameters = [

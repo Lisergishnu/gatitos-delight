@@ -11,11 +11,21 @@ import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
+/// A view controller that lists the whole list of breeds from the Cat API.
 class MBTBreedsTableViewController: UITableViewController {
 
+    /// Array containing all the breed descriptions returned by the service.
     var breedCells: [MBTBreedModel] = []
     
+    /// Notification name for setting the breed on the table.
+    ///
+    /// When recieved, the view controller will load the recieved breed name in the detail view. An example of how to emit the event:
+    ///
+    ///     let userInfo: [String:String] = [MBTBreedsTableViewController.BreedNameKey:"Breed Name"]
+    ///     NotificationCenter.default.post(name: MBTBreedsTableViewController.SetBreed, object: nil, userInfo: userInfo)
     static let SetBreed = Notification.Name("setBreed")
+    /// Constant string for identifing the breed name data when passing a SetBreed notification.
+    /// - SeeAlso: MBTCatsRatingViewController.SetCat
     static let BreedNameKey: String = "breedName"
     
     override func viewDidLoad() {
@@ -28,6 +38,8 @@ class MBTBreedsTableViewController: UITableViewController {
     
     
     // MARK: - Data Managment
+    
+    /// Fills the internal array with breed data from the Cat API.
     func populateArrayOfBreeds() {
         Alamofire.request("https://api.thecatapi.com/v1/breeds", headers: MBTCatAPIHeader.httpHeader).responseSwiftyJSON { response in
             guard let responseValue = response.result.value else {
@@ -59,6 +71,9 @@ class MBTBreedsTableViewController: UITableViewController {
         }
     }
     
+    /// Selects a breed from the table based on its name.
+    ///
+    /// - Parameter name: Name of the breed as returned by the Cat API.
     func selectBreed(with name:String) {
         loadViewIfNeeded()
         if let selectedBreedIndex = breedCells.firstIndex(where: {$0.name == name}) {
@@ -99,6 +114,10 @@ class MBTBreedsTableViewController: UITableViewController {
     }
     
     // MARK: - Notification handling
+    
+    /// Objective-C compilant function that is binded to the NotificationCenter with the SetBreed Notification.
+    ///
+    /// - Parameter notification: Notification recieved.
     @objc func setBreed(notification: NSNotification) {
         guard let breedName = notification.userInfo?[MBTBreedsTableViewController.BreedNameKey] as? String else {
             return
