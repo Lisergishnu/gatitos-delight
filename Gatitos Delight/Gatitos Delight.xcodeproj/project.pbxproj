@@ -18,7 +18,7 @@
 		FF5839612258EDBE008A1911 /* MBTCatAPIHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5839602258EDBE008A1911 /* MBTCatAPIHeader.swift */; };
 		FF58396422595F7A008A1911 /* MBTBreedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58396322595F7A008A1911 /* MBTBreedDetailViewController.swift */; };
 		FF5839662259FED7008A1911 /* MBTBreedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5839652259FED7008A1911 /* MBTBreedInfoViewController.swift */; };
-		FF583968225A0320008A1911 /* MBTBreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF583967225A0320008A1911 /* MBTBreedModel.swift */; };
+		FF583968225A0320008A1911 /* MBTCatAPIBreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF583967225A0320008A1911 /* MBTCatAPIBreedModel.swift */; };
 		FFC37B1A225A93A00000C7BA /* MBTCatPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC37B19225A93A00000C7BA /* MBTCatPhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 		FF5839602258EDBE008A1911 /* MBTCatAPIHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTCatAPIHeader.swift; sourceTree = "<group>"; };
 		FF58396322595F7A008A1911 /* MBTBreedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedDetailViewController.swift; sourceTree = "<group>"; };
 		FF5839652259FED7008A1911 /* MBTBreedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedInfoViewController.swift; sourceTree = "<group>"; };
-		FF583967225A0320008A1911 /* MBTBreedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTBreedModel.swift; sourceTree = "<group>"; };
+		FF583967225A0320008A1911 /* MBTCatAPIBreedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTCatAPIBreedModel.swift; sourceTree = "<group>"; };
 		FFC37B19225A93A00000C7BA /* MBTCatPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTCatPhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +108,7 @@
 		FF58395F2258ED8D008A1911 /* Cat API */ = {
 			isa = PBXGroup;
 			children = (
-				FF583967225A0320008A1911 /* MBTBreedModel.swift */,
+				FF583967225A0320008A1911 /* MBTCatAPIBreedModel.swift */,
 				FF5839602258EDBE008A1911 /* MBTCatAPIHeader.swift */,
 			);
 			path = "Cat API";
@@ -253,7 +253,7 @@
 				FF58394E2258E07F008A1911 /* MBTBreedsTableViewController.swift in Sources */,
 				FF58396422595F7A008A1911 /* MBTBreedDetailViewController.swift in Sources */,
 				FF5839612258EDBE008A1911 /* MBTCatAPIHeader.swift in Sources */,
-				FF583968225A0320008A1911 /* MBTBreedModel.swift in Sources */,
+				FF583968225A0320008A1911 /* MBTCatAPIBreedModel.swift in Sources */,
 				FF58394A2258E07F008A1911 /* AppDelegate.swift in Sources */,
 				FF58394C2258E07F008A1911 /* MBTCatsRatingViewController.swift in Sources */,
 				FF5839662259FED7008A1911 /* MBTBreedInfoViewController.swift in Sources */,

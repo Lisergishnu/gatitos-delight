@@ -34,14 +34,14 @@ class MBTBreedDetailViewController: UIViewController {
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
     /// Reference to the embedded breed info view controller.
-    var breedInfoViewController: MBTBreedInfoViewController?    
+    var breedInfoViewController: MBTBreedInfoViewController?
     
     /// Constant string for identifing the imageID data when passing a SetCat notification.
     /// - SeeAlso: MBTCatsRatingViewController.SetCat
     static let ImageIDKey: String = "imageID"
     
     /// The represented breed shown in the view. Setting this will refresh the UI.
-    var representedBreed : MBTBreedModel? {
+    var representedBreed : MBTCatAPIBreedModel? {
         didSet{
             populateUI()
         }

@@ -1,5 +1,5 @@
 //
-//  MBTBreedModel.swift
+//  MBTCatAPIBreedModel.swift
 //  Gatitos Delight
 //
 //  Created by Marco Benzi Tobar on 4/7/19.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Swift representation of the Cat API breed model.
-struct MBTBreedModel {
+struct MBTCatAPIBreedModel {
     /// ID of the breed.
     var id: String
     /// Name of the breed.

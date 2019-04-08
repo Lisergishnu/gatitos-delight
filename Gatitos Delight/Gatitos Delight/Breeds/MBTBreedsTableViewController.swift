@@ -15,7 +15,7 @@ import Alamofire_SwiftyJSON
 class MBTBreedsTableViewController: UITableViewController {
 
     /// Array containing all the breed descriptions returned by the service.
-    var breedCells: [MBTBreedModel] = []
+    var breedCells: [MBTCatAPIBreedModel] = []
     
     /// Notification name for setting the breed on the table.
     ///
@@ -57,7 +57,7 @@ class MBTBreedsTableViewController: UITableViewController {
                     let weight = breed["weight"]["metric"].string else {
                         continue
                 }
-                let b = MBTBreedModel(id: id,
+                let b = MBTCatAPIBreedModel(id: id,
                                           name: name,
                                           country: country,
                                           lifeSpan: lifeSpan,

@@ -19,7 +19,7 @@ class MBTBreedInfoViewController: UIViewController {
     @IBOutlet private weak var lifeSpanLabel: UILabel!
     
     /// The represented breed shown in the view. Setting this will refresh the UI.
-    var representedBreed : MBTBreedModel? {
+    var representedBreed : MBTCatAPIBreedModel? {
         didSet {
             populateUI()
         }
