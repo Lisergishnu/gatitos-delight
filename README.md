@@ -5,6 +5,8 @@
 <h1 align="center">Gatitos Delight (Kitty delight)</h1>
 <p align="center">iOS cat sightseeing app. Works with thecatapi.com </p>
 
+> Caveat emptor: This app was done for a technical interview over a weekend. After one year I've decided to make it public but I haven't revisited its architecture.
+
 ## 📝 Design
 
 Before starting coding, I needed to have some overall idea of how I wanted the application to look like. The requirements define that:
