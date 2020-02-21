@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">Gatitos Delight (Kitty delight)</h1>
-<p align="center">iOS cat sightseeing up for Felcana. Works with thecatapi.com </p>
+<p align="center">iOS cat sightseeing app. Works with thecatapi.com </p>
 
 ## 📝 Design
 
